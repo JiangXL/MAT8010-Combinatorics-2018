@@ -4,7 +4,10 @@
 
 <\body>
   <doc-data|<doc-title|Topic 4 Recusion and Generating
-  Functions>|<doc-author|<author-data|<author-name|Yuejian Mo>>>>
+  Functions>|<doc-author|<author-data|<author-name|Yuejian
+  Mo>|<\author-affiliation>
+    <date|>
+  </author-affiliation>>>>
 
   Given a sequence <math|<around*|{|a <rsub|n>|}><rsub|n=0><rsup|\<infty\>>>
   of complex number, we define\ 
@@ -20,6 +23,19 @@
   </equation*>
 
   \ the exponential generating function. We can using the
+
+  \;
+
+  <\itemize>
+    <item>Generating function can be used to prove and/or discovery
+    identities.
+
+    <item>Generating function can be used to solve recursion
+
+    <item>Generating function can be used to prove recursion\ 
+  </itemize>
+
+  \;
 
   \;
 
@@ -134,7 +150,7 @@
 
   <math|<around*|(||)>>
 
-  \;
+  <with|font-series|bold|Example 14.6>
 
   Square free
 
@@ -176,6 +192,118 @@
 
   \;
 
+  <math|M<rsub|n>=># of monic sequare free polys of deg <math|n> in
+  <math|Z/pZ<around*|[|x|]>>
+
+  <\math>
+    f<around*|(|x|)>=f<rsub|1><around*|(|x|)><rsup|c1>+f<rsub|2><around*|(|x|)><rsup|c2>+\<cdots\>
+
+    i<rsub|1>\<leqslant\>1,i<rsub|2>\<leqslant\>1
+  </math>
+
+  <\math>
+    <big|sum>M<rsub|n>x<rsup|n>=<around*|(|1+x<rsup|d<rsub|1>>|)><around*|(|1+x<rsup|d<rsub|2>>|)>+<around*|(|1+x<rsup|d<rsub|3>>|)>
+    \<cdots\>
+
+    =\<product\><rsub|d\<geqslant\>1><around*|(|<frac|1-x<rsup|2d>|1-x<rsup|d>>|)><rsup|N<rsub|d>>=<frac|1-p
+    x<rsup|2>|1-p x>
+
+    =<frac|1|1-p x>-<frac|p x<rsup|2>|1-p x>
+
+    =1+p x+<around*|(|p x|)><rsup|2>+\<cdots\>+<around*|(|p
+    x|)><rsup|n>+\<cdots\>
+
+    \;
+
+    M<rsub|n>=p<rsup|n>-p<rsup|n+1><space|2em>V n\<geqslant\>2
+  </math>
+
+  \;
+
+  <\equation*>
+    <frac|1|1-q x<rsup|2>>=\<Pi\><rsub|d\<geqslant\>1><around*|(|<frac|1|1-x<rsup|2d>>|)><rsup|N<rsub|d>>
+  </equation*>
+
+  \;
+
+  <math|<frac|1-9 x<rsup|6>|<around*|(|1-9 x<rsup|2>|)><around*|(|1-9
+  x<rsup|3>|)>>=<big|sum><rsub|m=0><rsup|\<infty\>>9<rsup|m>x<rsup|2m+1>+<big|sum><rsub|m\<geqslant\>0><rsup|\<infty\>>q<rsup|m>x<rsup|2m+1>>
+
+  <math|n=<around*|{|<tabular|<tformat|<table|<row|<cell|even>>|<row|<cell|odd>>>>>|\<nobracket\>>>
+
+  <math|P<around*|(|n|)>=q<rsup|<frac|n|2>-1>-q<rsup|<frac|n-1|3>>>
+
+  \;
+
+  \;
+
+  \;
+
+  (H.Wilf Generationfunctionology)
+
+  Don't try to evaluate the sum that you are looking at. Instead, find the
+  g.f. of the whole parameartion family of them, then read off the
+  coefficients.
+
+  <\enumerate-numeric>
+    <\enumerate-alpha>
+      <item>Identify the free variable, call it <math|n> (free index), that
+      the sum depends on. GIve a name to the sum that you are lloking at, say
+      <math|f<around*|(|n|)>>.
+
+      <item>From the g.f. of <math|f<around*|(|n|)>>,
+      <math|F<around*|(|x|)>=\<Sigma\><rsub|n=0><rsup|\<infty\>>f<around*|(|n|)>x<rsup|n>>
+
+      <item>Interchange the order of two summations
+
+      <item>Identify the coefficient of the g.f.
+    </enumerate-alpha>
+  </enumerate-numeric>
+
+  Useful techniques
+
+  <\math>
+    <around*|(|<tabular|<tformat|<table|<row|<cell|x>>|<row|<cell|m>>>>>|)>=<around*|{|<tabular|<tformat|<table|<row|<cell|0>|<cell|if
+    m\<less\>0>>|<row|<cell|0>|<cell|if >>>>>|\<nobracket\>>
+
+    x<rsup|-r><around*|(|1+x|)><rsup|n>=<big|sum><rsub|k><around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|r+k>>>>>|)>x<rsup|k>,\<forall\>n\<geqslant\>1
+
+    <frac|x<rsup|k>|<around*|(|1-x|)><rsup|k+1>>=<big|sum><rsub|r=0><rsup|\<infty\>><around*|(|<tabular|<tformat|<table|<row|<cell|r>>|<row|<cell|k>>>>>|)>x<rsup|r>
+
+    <big|sum><rsub|n\<geqslant\>0><frac|1|n+1><around*|(|<tabular|<tformat|<table|<row|<cell|2n>>|<row|<cell|n>>>>>|)>x<rsup|n>=<frac|1|2x><around*|(|1-<sqrt|1-4x>|)>
+  </math>
+
+  <\with|font-series|bold>
+    Ex 1
+  </with>
+
+  <\math>
+    f<around*|(|n|)>=<big|sum><rsub|k\<geqslant\>0><around*|(|<tabular|<tformat|<table|<row|<cell|k>>|<row|<cell|n-k>>>>>|)>,n=0,1,2\<ldots\>.
+
+    F<around*|(|x|)>=<big|sum><rsub|n=0><rsup|\<infty\>>f<around*|(|n|)>x<rsup|n>=<big|sum><rsub|k=0><rsup|n>x<rsup|k><around*|(|<big|sum><rsub|n\<geqslant\>k><rsup|\<infty\>><around*|(|<rsup|k><rsub|n-k>|)>x<rsup|n-k>|)>=<big|sum><rsub|k=0><rsup|\<infty\>>x<rsup|k><around*|(|1+k|)><rsup|k>=<frac|1|1-x-x<rsup|2>>=F<rsub|0>+F<rsub|1>+F<rsub|2>+\<cdots\>
+  </math>
+
+  \;
+
+  \;
+
+  <with|font-series|bold|Ex 2>
+
+  <\math>
+    <big|sum><rsub|k\<geqslant\>0><around*|(||)><around*|(||)>
+
+    F<around*|(|x|)>=<big|sum><rsub|n=0><rsup|\<infty\>>f<around*|(|n|)>x<rsup|n>=<big|sum><rsub|n=0><rsup|\<infty\>><around*|(|<big|sum><rsub|k=0><rsup|\<infty\>><around*|(|<rsub|n+2k><rsup|n+k>|)>
+    <around*|(|<rsub|k><rsup|2k>|)><frac|<around*|(|-1|)><rsup|k>|k+1>|)>x<rsup|n>=<big|sum><rsub|k=0><rsup|\<infty\>><around*|(|<rsub|k><rsup|2k+1>|)><frac|<around*|(|-1|)><rsup|k>|k+1>x<rsup|-k><frac|x<rsup|m+1k>|<around*|(|1-x|)><rsup|m+2k+1>>=<frac|x<rsup|m>|<around*|(|1-x|)><rsup|m+1>><big|sum><rsub|k=0><rsup|\<infty\>><frac|1|k+1><around*|(|<rsub|k><rsup|2k>|)><around*|(|<frac|-x|<around*|(|1-x|)><rsup|2>>|)><rsup|k>=<frac|x<rsup|m>|<around*|(|1-x|)><rsup|m+1>><frac|1|2<frac|-x|<around*|(|1-x|)><rsup|2>>><around*|(|1-<sqrt|1+<frac|4x|<around*|(|1-x|)><rsup|2>>>|)>=<frac|x<rsup|m>|<around*|(|1-x|)><rsup|m>>=<big|sum><rsub|j=0><rsup|\<infty\>><around*|(|<rsub|j><rsup|m+j-1>|)>x<rsup|j>=
+
+    \;
+
+    Let m+j=n,then <around*|(|<tabular|<tformat|<table|<row|<cell|n-1>>|<row|<cell|m-1>>>>>|)>
+  </math>
+
+  \;
+
+  Compute can prove the WZ problem.
+
   \;
 
   \;
@@ -185,5 +313,8 @@
   \;
 </body>
 
-<initial|<\collection>
-</collection>>
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+  </collection>
+</initial>
