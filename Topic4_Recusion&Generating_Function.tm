@@ -1,4 +1,4 @@
-<TeXmacs|1.99.5>
+<TeXmacs|1.99.6>
 
 <style|<tuple|generic|british>>
 
@@ -45,7 +45,7 @@
   in the product
 
   <\equation*>
-    <around*|(|1+x<rsub|1>+x<rsub|1><rsup|2>+\<cdots\>|)><around*|(|1+x<rsub|2>+x<rsup|2><rsub|2>+\<cdots\>|)>\<cdots\><around*|(|1+x<rsub|k>+x<rsup|2><rsub|m>+\<cdots\>|)>
+    <around*|(|1+x<rsub|1>+x<rsub|1><rsup|2>+\<cdots\>|)><around*|(|1+x<rsub|2>+x<rsup|2><rsub|2>+\<cdots\>|)>\<cdots\><around*|(|1+x<rsub|k>+x<rsup|2><rsub|k>+\<cdots\>|)>
   </equation*>
 
   We can collect all the terms involving exactly <math|n> balls by taking
@@ -56,53 +56,7 @@
 
   \;
 
-  \;
-
-  <with|font-series|bold|Example 14.8.> Considere walk in the x-y plane,
-  where each step is\ 
-
-  <\math>
-    U:<around*|(|x,y|)>\<longrightarrow\><around*|(|x+1,y+1|)>
-
-    or
-
-    D:<around*|(|x,y|)>\<longrightarrow\><around*|(|x+1,y-1|)>
-  </math>
-
-  Form <math|<around*|(|0,0|)>> , how many way can we reach
-  <math|<around*|(|2n,0|)>> without cross with <math|x>-axis.
-
-  By reflecting the part of the path bwtteen A and the <math|1<rsup|st>>
-  meeting C of the path with <math|x-axis> with the <math|x-axis>.
-
-  Consider wlaks in the <math|X-Y> plane, where each step if we find a path
-  from the reflected at pt to <math|A<rsup|<rprime|'>>> to B. This
-  establisher an 1-to-1 corresp bettween <math|<around*|(|A\<longrightarrow\>B|)>
-  and <around*|(|A<rsup|<rprime|'>>\<longrightarrow\>B|)>>.
-
-  <math|>
-
-  <math|<rsub|><around*|(|<rsub|l2><rsup|n>|)>>-# of paths bettween A and B
-  whichdo not meet <math|x-axis>.
-
-  Q1 How many do not meet
-
-  <math|<frac|1|n><around*|(|<rsub|n-1><rsup|2n-2>|)>>
-
-  \;
-
-  Q2 HOw many pathways from (0,0) to (2n,0) ar there no (you can touch, but
-  no cross)
-
-  <math|<around*|(|<rsub|n-1><rsup|2n-2>|)>-<around*|(|<rsub|n-2><rsup|2n-2>|)>>
-
-  Relection principle: We consider two point <math|A and B> in the upper half
-  plane, and a possible path between them which meet and/or cross the
-  <math|x-axis>.
-
-  \;
-
-  \;
+  What is field?
 
   <math|Z/p \<Zeta\>>= a field = {}
 
@@ -148,7 +102,7 @@
 
   <frac|1|1 - p x>=(1+x)
 
-  <math|<around*|(||)>>
+  \;
 
   <with|font-series|bold|Example 14.6>
 
@@ -235,6 +189,50 @@
 
   \;
 
+  <\equation*>
+    u<rsub|n>=<frac|1|n><around*|(|<rsub|n-1><rsup|2n-2>|)>
+  </equation*>
+
+  are called <with|font-shape|italic|Catalan numbers>.\ 
+
+  <with|font-series|bold|Example 14.8.> Considere walk in the x-y plane,
+  where each step is\ 
+
+  <\math>
+    U:<around*|(|x,y|)>\<longrightarrow\><around*|(|x+1,y+1|)> or
+    D:<around*|(|x,y|)>\<longrightarrow\><around*|(|x+1,y-1|)>
+  </math>
+
+  From <math|<around*|(|0,0|)>>, how many way can we reach
+  <math|<around*|(|2n,0|)>> without cross with <math|x>-axis.
+
+  By reflecting the part of the path bwtteen A and the <math|1<rsup|st>>
+  meeting C of the path with <math|x-axis>. Consider walks in the <math|X-Y>
+  plane, where each step if we find a path from the reflected at pt to
+  <math|A<rsup|<rprime|'>>> to B. This establish an 1-to-1 corresp bettween
+  <math|<around*|(|A\<longrightarrow\>B|)> and
+  <around*|(|A<rsup|<rprime|'>>\<longrightarrow\>B|)>>.<math|>
+
+  <math|<rsub|><around*|(|<rsub|l2><rsup|n>|)>>=# of paths bettween A and B
+  which do not meet <math|x-axis>.\ 
+
+  \;
+
+  Q1.How many do not meet
+
+  <math|<frac|1|n><around*|(|<rsub|n-1><rsup|2n-2>|)>>
+
+  \;
+
+  Q2. How many pathways from (0,0) to (2n,0) ar there no (you can touch, but
+  no cross)
+
+  <math|<around*|(|<rsub|n-1><rsup|2n-2>|)>-<around*|(|<rsub|n-2><rsup|2n-2>|)>>
+
+  Relection principle: We consider two point <math|A and B> in the upper half
+  plane, and a possible path between them which meet and/or cross the
+  <math|x-axis>.
+
   \;
 
   \;
@@ -264,7 +262,7 @@
 
   <\math>
     <around*|(|<tabular|<tformat|<table|<row|<cell|x>>|<row|<cell|m>>>>>|)>=<around*|{|<tabular|<tformat|<table|<row|<cell|0>|<cell|if
-    m\<less\>0>>|<row|<cell|0>|<cell|if >>>>>|\<nobracket\>>
+    m\<less\>0>>|<row|<cell|0>|<cell|if x\<less\>m>>>>>|\<nobracket\>>
 
     x<rsup|-r><around*|(|1+x|)><rsup|n>=<big|sum><rsub|k><around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|r+k>>>>>|)>x<rsup|k>,\<forall\>n\<geqslant\>1
 
@@ -302,7 +300,7 @@
 
   \;
 
-  Compute can prove the WZ problem.
+  Compute can prove the WZ problem.?
 
   \;
 
@@ -315,6 +313,6 @@
 
 <\initial>
   <\collection>
-    <associate|page-medium|paper>
+    <associate|page-medium|papyrus>
   </collection>
 </initial>
