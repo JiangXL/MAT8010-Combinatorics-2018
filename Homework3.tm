@@ -71,12 +71,39 @@
   <\enumerate-alpha>
     <item>Find a recurrence formula for <math|f<around*|(|m,n|)>.>
 
+    <\math>
+      f<around*|(|m,0|)>=f<around*|(|0,n|)>=1
+
+      f<around*|(|m,n|)>=f<around*|(|m-1,n|)>+f<around*|(|m-1,n-1|)>+f<around*|(|m-1,n-1|)>
+    </math>
+
     <item>Use the recurrence formula to prove that
     <math|f<around*|(|m,n|)>=f<around*|(|n,m|)>>.
 
+    Because the recurrence formula of <math|f<around*|(|m,n|)>> is symmetric,
+    and the meric boundary is sysmmetric, <math|f> is sysmmetric.
+
     <item>Do part (b) by using the generating function method.
 
+    Firstly, it is convenient to allow <math|f<around*|(|m,0|)>=f<around*|(|0,n|)>=1>.
+    Then
+
+    <\math>
+      <tabular|<tformat|<table|<row|<cell|G<around*|(|x,y|)>>|<cell|=<big|sum><rsub|m\<geqslant\>0><big|sum><rsub|n\<geqslant\>0>f<around*|(|m,n|)>x<rsup|m>y<rsup|n>>>|<row|<cell|>|<cell|=<big|sum><rsub|m\<geqslant\>0><big|sum><rsub|n\<geqslant\>0>x<rsup|m>y<rsup|n><big|sum><rsub|k1,\<ldots\>,k<rsub|n>\<in\>Z,<around*|\||k<rsub|1>|\|>+<around*|\||k<rsub|2>|\|>+\<ldots\>+<around*|\||k<rsub|n>|\|>\<less\>m>1>>|<row|<cell|>|<cell|=<big|sum><rsub|m\<geqslant\>0>y<rsup|n><big|sum><rsub|k<rsub|1>,\<ldots\>,k<rsub|n>\<in\>Z><big|sum><rsub|m\<geqslant\><around*|\||k<rsub|1>|\|>+\<ldots\>+<around*|\||k<rsub|n>|\|>>x<rsup|m>>>|<row|<cell|>|<cell|=<big|sum><rsub|n\<geqslant\>0>y<rsup|n><big|sum><rsub|k<rsub|1>,\<ldots\>,k<rsub|n>\<in\>Z><frac|x<rsup|<around*|\||k<rsub|1>+\<ldots\>+k<rsub|n>|\|>>|1-x>>>|<row|<cell|>|<cell|=<frac|1|1-x><big|sum><rsub|n\<geqslant\>0>y<rsup|n><around*|(|<big|sum><rsub|k\<in\>Z>x<rsup|<around*|\||k|\|>>|)><rsup|n>>>|<row|<cell|>|<cell|=<frac|1|1-x><big|sum><rsub|n\<geqslant\>0>y<rsup|n><around*|(|<frac|1+x|1-x>|)><rsup|n>>>|<row|<cell|>|<cell|=<frac|1|1-x>
+      <frac|1|1-y<around*|(|1+x|)>/<around*|(|1-x|)>>>>|<row|<cell|>|<cell|=<frac|1|1-x-y-x
+      y>>>>>>
+
+      \;
+    </math>
+
+    Because the <math|G<around*|(|x,y|)>=G<around*|(|y,x|)>>,
+    <math|f<around*|(|m,n|)>=f<around*|(|n,m|)>>.
+
+    (Refer from http://www.mathcs.emory.edu/~mic/math/files/kedlaya/)
+
     <item>Find a closed formula for <math|<big|sum><rsub|n\<geqslant\>0>f<around*|(|n,n|)>x<rsup|n>>
+
+    <math|<tabular|<tformat|<table|<row|<cell|<big|sum><rsub|n\<geqslant\>0>f<around*|(|n,n|)>x<rsup|n>>|<cell|=<big|sum><rsub|n\<geqslant\>0>x<rsup|n><big|sum><rsub|k<rsub|1>,\<ldots\>.,k<rsub|2>\<in\>Z,<around*|\||k<rsub|1>|\|>+\<ldots\>+<around*|\||k<rsub|n>|\|>\<less\>n>1>>|<row|<cell|>|<cell|=<big|sum><rsub|k<rsub|1>,\<ldots\>.,k<rsub|n>\<in\>Z><big|sum><rsub|n\<geqslant\><around*|\||k<rsub|1>|\|>+\<ldots\>+<around*|\||k<rsub|n>|\|>>x<rsup|n>>>|<row|<cell|>|<cell|=<big|sum><rsub|k<rsub|1>,\<ldots\>,k<rsub|2>\<in\>Z><frac|x<rsup|<around*|\||k<rsub|1>|\|>+\<ldots\>+<around*|\||x<rsub|n>|\|>>|1-x>>>|<row|<cell|>|<cell|=<frac|1|1-x><big|sum><rsub|k\<in\>Z><around*|(|<frac|1+x|1-x>|)><rsup|n>>>|<row|<cell|>|<cell|=<frac|1|1-x><frac|1|1-<around*|(|1+x|)>/<around*|(|1-x|)>>>>|<row|<cell|>|<cell|=<frac|1|1-2x>>>>>>>
   </enumerate-alpha>
 </body>
 
