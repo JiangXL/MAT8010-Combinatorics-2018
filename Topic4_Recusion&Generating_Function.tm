@@ -1,4 +1,4 @@
-<TeXmacs|1.99.6>
+<TeXmacs|1.99.5>
 
 <style|<tuple|generic|british>>
 
@@ -64,11 +64,9 @@
   is th size of fied
 
   <math|d\<geqslant\>1>, <math|N<rsub|d>>= the # of irreducible mnic polys of
-  dogree in z/pz[x].
+  dogree in<space|1em> z/pz[x].
 
-  <math|x<rsup|d>+a<rsub|n-1>x<rsup|d-1>+\<cdots\>+a<rsub|1>x+a<rsub|0>>\ 
-
-  UFD
+  <math|x<rsup|d>+a<rsub|n-1>x<rsup|d-1>+\<cdots\>+a<rsub|1>x+a<rsub|0>> 1UFD
 
   <\math>
     N<rsub|2>\ 
@@ -260,16 +258,20 @@
 
   Useful techniques
 
-  <\math>
-    <around*|(|<tabular|<tformat|<table|<row|<cell|x>>|<row|<cell|m>>>>>|)>=<around*|{|<tabular|<tformat|<table|<row|<cell|0>|<cell|if
-    m\<less\>0>>|<row|<cell|0>|<cell|if x\<less\>m>>>>>|\<nobracket\>>
+  <\itemize>
+    <item><math|<around*|(|<tabular|<tformat|<table|<row|<cell|x>>|<row|<cell|m>>>>>|)>=<around*|{|<tabular|<tformat|<table|<row|<cell|0>|<cell|if
+    m\<less\>0>>|<row|<cell|0>|<cell|if x\<less\>m>>>>>|\<nobracket\>>>
 
-    x<rsup|-r><around*|(|1+x|)><rsup|n>=<big|sum><rsub|k><around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|r+k>>>>>|)>x<rsup|k>,\<forall\>n\<geqslant\>1
+    <item><math|x<rsup|-r><around*|(|1+x|)><rsup|n>=<big|sum><rsub|k><around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|r+k>>>>>|)>x<rsup|k>,\<forall\>n\<geqslant\>1>
 
-    <frac|x<rsup|k>|<around*|(|1-x|)><rsup|k+1>>=<big|sum><rsub|r=0><rsup|\<infty\>><around*|(|<tabular|<tformat|<table|<row|<cell|r>>|<row|<cell|k>>>>>|)>x<rsup|r>
+    <item><math|<frac|x<rsup|k>|<around*|(|1-x|)><rsup|k+1>>=<big|sum><rsub|r=0><rsup|\<infty\>><around*|(|<tabular|<tformat|<table|<row|<cell|r>>|<row|<cell|k>>>>>|)>x<rsup|r>>
 
-    <big|sum><rsub|n\<geqslant\>0><frac|1|n+1><around*|(|<tabular|<tformat|<table|<row|<cell|2n>>|<row|<cell|n>>>>>|)>x<rsup|n>=<frac|1|2x><around*|(|1-<sqrt|1-4x>|)>
-  </math>
+    <item><math|<big|sum><rsub|n\<geqslant\>0><frac|1|n+1><around*|(|<tabular|<tformat|<table|<row|<cell|2n>>|<row|<cell|n>>>>>|)>x<rsup|n>=<frac|1|2x><around*|(|1-<sqrt|1-4x>|)>>
+
+    <item><math|<big|sum><rsub|n=0><rsup|\<infty\>><around*|(|<tabular*|<tformat|<table|<row|<cell|2n>>|<row|<cell|n>>>>>|)>x<rsup|n>=<sqrt|1-4x>>
+  </itemize>
+
+  \;
 
   <\with|font-series|bold>
     Ex 1
@@ -313,6 +315,7 @@
 
 <\initial>
   <\collection>
+    <associate|font-base-size|11>
     <associate|page-medium|papyrus>
   </collection>
 </initial>
