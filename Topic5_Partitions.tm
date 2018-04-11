@@ -89,7 +89,21 @@
   B: If b\<gtr\>s, remove the sople and adjoin i at the bottom of the diagram
   as a new base, excepte if <math|b=s+1> and the base and slope have a point
   in common.
+
+  \;
+
+  <\big-table>
+    <tabular|<tformat|<table|<row|<cell|Elements of N
+    (ball)>|<cell|elements>|<cell|any <math|f>>|<cell|injection
+    <math|f>>|<cell|saf <math|f>>>|<row|<cell|disting>|<cell|dist>|<cell|>|<cell|>|<cell|>>|<row|<cell|indist>|<cell|dist>|<cell|>|<cell|>|<cell|>>|<row|<cell|dist>|<cell|indist>|<cell|>|<cell|>|<cell|>>|<row|<cell|indist>|<cell|indist>|<cell|>|<cell|>|<cell|>>>>>
+  </big-table|>
 </body>
 
 <initial|<\collection>
 </collection>>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|1|?>>
+  </collection>
+</references>
