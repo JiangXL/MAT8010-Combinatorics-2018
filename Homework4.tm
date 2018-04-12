@@ -8,7 +8,7 @@
     <date|>
   </author-affiliation>>>>
 
-  \;
+  \<#62BD\>\<#5C49\>\<#539F\>\<#7406\>
 </body>
 
 <initial|<\collection>

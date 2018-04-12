@@ -104,7 +104,34 @@
     <item>Find a closed formula for <math|<big|sum><rsub|n\<geqslant\>0>f<around*|(|n,n|)>x<rsup|n>>
 
     <math|<tabular|<tformat|<table|<row|<cell|<big|sum><rsub|n\<geqslant\>0>f<around*|(|n,n|)>x<rsup|n>>|<cell|=<big|sum><rsub|n\<geqslant\>0>x<rsup|n><big|sum><rsub|k<rsub|1>,\<ldots\>.,k<rsub|2>\<in\>Z,<around*|\||k<rsub|1>|\|>+\<ldots\>+<around*|\||k<rsub|n>|\|>\<less\>n>1>>|<row|<cell|>|<cell|=<big|sum><rsub|k<rsub|1>,\<ldots\>.,k<rsub|n>\<in\>Z><big|sum><rsub|n\<geqslant\><around*|\||k<rsub|1>|\|>+\<ldots\>+<around*|\||k<rsub|n>|\|>>x<rsup|n>>>|<row|<cell|>|<cell|=<big|sum><rsub|k<rsub|1>,\<ldots\>,k<rsub|2>\<in\>Z><frac|x<rsup|<around*|\||k<rsub|1>|\|>+\<ldots\>+<around*|\||x<rsub|n>|\|>>|1-x>>>|<row|<cell|>|<cell|=<frac|1|1-x><big|sum><rsub|k\<in\>Z><around*|(|<frac|1+x|1-x>|)><rsup|n>>>|<row|<cell|>|<cell|=<frac|1|1-x><frac|1|1-<around*|(|1+x|)>/<around*|(|1-x|)>>>>|<row|<cell|>|<cell|=<frac|1|1-2x>>>>>>>
+
+    \;
   </enumerate-alpha>
+
+  Let <math|n> be a postive integer
+
+  a) How many l-tuples <math|<around*|(|x<rsub|1>,x<rsub|2>,\<ldots\>,x<rsub|l>|)>>,
+  <math|x> are integers, satisfy <math|<around*|\||x<rsub|1>|\|>+<around*|\||x<rsub|2>|\|>+\<ldots\>+<around*|\||x<rsub|l>|\|>=n?>
+
+  b) How many l-tuples, <math|x> are integers, satifsy
+  <math|<around*|\||x<rsub|1>|\|>+<around*|\||x<rsub|2>|\|>+\<cdots\>+<around*|\||x<rsub|l>|\|>\<leqslant\>m>?
+
+  <math|<around*|(|1+2x+2x<rsup|2>+\<cdots\>|)><rsup|l>>
+
+  <\math>
+    a<rsub|n>=<around*|[|x<rsub|n>|\<nobracket\>><around*|[|1+2x+2x<rsup|2>+\<ldots\>.|]>
+
+    =<around*|[|x<rsub|n>|]><around*|(|1+<frac|2x|1-x>|)><rsup|l>=<around*|[|x<rsup|n>|]><around*|(|<big|sum><rsub|i=0><rsup|l><around*|(|<rsub|i><rsup|l>|)>x<rsup|i>|)><around*|(|<big|sum><rsub|j=0><rsup|\<infty\>><around*|(|<rsub|j><rsup|l+j-1>|)>x<rsup|j>|)>
+  </math>
+
+  b) <math|S<rsub|n>=<around*|\||<around*|{|x<rsub|1>,x<rsub|2>,\<ldots\>x<rsub|l>|}>|\|>
+  <around*|\||\<forall\>i,|\|>x<rsub|i><around*|\||+<around*|\|||\|>x<rsub|2>|\|>+\<cdots\>+<around*|\||x<rsub|l>|\|>\<leqslant\>n<around*|\|||\<nobracket\>>>
+
+  The g.f. is\ 
+
+  <math|<around*|{|S<rsub|n>|}>> is <math|<frac|<big|sum>a<rsub|n>x<rsup|n>|1-x>=<frac|<around*|(|1+x|)><rsup|l>|<around*|(|1-x|)><rsup|l+1>>>
+
+  \;
 </body>
 
 <\initial>

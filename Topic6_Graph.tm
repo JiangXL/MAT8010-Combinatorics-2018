@@ -3,18 +3,16 @@
 <style|generic>
 
 <\body>
-  <doc-data|<doc-title|Graphs & Trees>|<doc-author|<author-data|<author-name|yuejian
+  <doc-data|<doc-title|Graphs>|<doc-author|<author-data|<author-name|yuejian
   mo>|<\author-affiliation>
     <date|>
   </author-affiliation>>>>
 
-  D<with|font-series|bold|ef:> A graph <math|G> is a piair
-  <math|<around*|(|V<around*|(|G|)>,E<around*|(|G|)> |)>>together with a
-  mapping which associates each element <math|e\<in\>E<around*|(|G|)>>with an
-  unordered pair <math|x,y\<in\>V<around*|(|G|)>>.
-
-  <math|V<around*|(|G|)> is the set of vertices,E<around*|(|G|)> is the set
-  of edges.>
+  D<with|font-series|bold|ef:> A graph <math|G> is a pair
+  <math|<around*|(|V<around*|(|G|)>,E<around*|(|G|)> |)>> together with a
+  mapping which associates each element <math|e\<in\>E<around*|(|G|)>> with
+  an unordered pair <math|x,y\<in\>V<around*|(|G|)>>. <math|V<around*|(|G|)>
+  is th set of vertices,E<around*|(|G|)> is the set of edges.>
 
   A graph is called simple if we do not allow loops or mulitiple edges. A
   simple graph <math|G> is a pair <math|<around*|(|V<around*|(|G|)>,E<around*|(|G|)>|)>>
@@ -34,7 +32,10 @@
   such that <math|\<forall\>x,y\<in\>V<around*|(|G<rsub|1>|)>,x\<sim\>y\<Leftrightarrow\>\<alpha\><around*|(|x|)>\<sim\>\<alpha\><around*|(|y|)>>.
   (i.e,\ 
 
-  \;
+  We say two graphs are <with|font-series|bold|isomorphic> if there is a
+  one-to-oien corespondence between the vertex sets such that if two vertices
+  are joined by an edge in one graph, then the coreesponding vertices are
+  joined by an edge in the other graph.
 
   Thrm 1.1. The number of vertifces with add odd degrees must be even.
 
