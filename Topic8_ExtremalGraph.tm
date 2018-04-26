@@ -3,34 +3,39 @@
 <style|generic>
 
 <\body>
-  <doc-data|<doc-title|Chapter 4 Turan's Thm & Extremal
-  Graphs>|<doc-author|<author-data|<author-name| yuejian
-  mo>|<\author-affiliation>
-    <date|>
-  </author-affiliation>>>>
+  <doc-data|<doc-title|Ÿ4 Turan's Thm & Extremal
+  Graphs>|<doc-date|<date>>|<doc-author|<\author-data|<author-name| yuejian
+  mo>>
+    \;
 
-  How many eges must a simple graph on n vertices have to gurantee the graph
-  to have a triangle?
+    \;
+  </author-data>>>
 
-  or what's the maximum # of eges of a simple graph on n vechece s.t. there
+  How many edges must a simple graph on <math|n> vertices have to gurantee
+  the graph to have a triangle?
+
+  or what's the maximum # of edges of a simple graph on n vertices s.t. there
   is no <math|\<mathLaplace\>>?
 
   \;
 
-  Let G ve a simple graph on n vertices. If G has no <math|\<Delta\>>, them
+  <with|font-series|bold|Thm>: Let <math|G> be a simple graph on <math|n>
+  vertices. If <math|G> has no <math|\<Delta\>>, then
 
   <\equation*>
-    e\<leqslant\><around*|[||\<nobracket\>>\<divides\><frac|n<rsup|2>|4><around*|\|||]>
+    e\<leqslant\>\<lfloor\><frac|n<rsup|2>|4>\<rfloor\>
   </equation*>
 
-  In otherwords. if <math|e<around*|(|G|)>\<gtr\><around*|\||<around*|[|<frac|n<rsup|2>|4>|]>|\|>+1>,
-  G must have a <math|\<Delta\>>.
+  In otherwords. if <math|e<around*|(|G|)>\<gtr\>\<lfloor\><frac|n<rsup|2>|4>\<rfloor\>+1>,
+  <math|G> must have a <math|\<Delta\>>.
+
+  <\proof>
+    (1) Any <math|x y\<in\>E<around*|(|G|)>>,
+
+    <math|<big|sum>>
+  </proof>
 
   \;
-
-  pf: (1) Any <math|x y\<in\>E<around*|(|G|)>>,
-
-  <math|<big|sum>6>
 
   \;
 
@@ -120,9 +125,10 @@
 
   \;
 
-  The girth of a graph = the size of a smallest cycle in G\ 
-
-  (If G has no cycles then we say that the girth of G =<math|\<infty\>>)
+  The <with|font-shape|italic|girth> of a graph <with|font-shape|italic|G> =
+  the size of a smallest cycle(polygon <math|P<rsub|n>>) in
+  <with|font-shape|italic|G>. (If <with|font-shape|italic|G> has no cycles
+  then we say that girth of <math|G> is <math|\<infty\>>, such as forest)
 
   Girth \<gtr\>= 3<space|1em>\<less\>=\<gtr\> G is simple
 
@@ -132,80 +138,86 @@
 
   \;
 
-  <with|font-series|bold|Theorem 4.2.> If a graph G on n vertices has more
-  than <math|<frac|1|2>n<sqrt|n-1>> edges, then G has girth\<less\>=4. That
-  is, G is not simple or contains a <math|P<rsub|3>> or a <math|P<rsub|4>>(a
-  triangle or a quadrilateral.)
+  <with|font-series|bold|Theorem 4.2.> If a graph <with|font-shape|italic|G>
+  on <with|font-shape|italic|n> vertices has more than
+  <math|<frac|1|2>n<sqrt|n-1>> edges, then <with|font-shape|italic|G> has
+  girth <math|\<leqslant\>4>. That is, <math|G> is not simple or contains a
+  <math|P<rsub|3>> or a <math|P<rsub|4>>(a triangle or a quadrilateral).
 
   <\proof>
-    <math|\<forall\>x>
+    <math|\<forall\>x\<in\>V<around*|(|G|)>>,
 
-    claim 1: no two of <math|y<rsub|1>,y<rsub|2>,\<ldots\>,y<rsub|n>>
+    Claim 1: no two of <math|y<rsub|1>,y<rsub|2>,\<ldots\>,y<rsub|n>> are
+    adjacent
 
-    claim 2: no vertex other than <math|x> can be adjacent to more than on of
-    <math|y<rsub|1>,y<rsub|2>,\<ldots\>,,y<rsub|d>>
+    Claim 2: no vertex other than <math|x> can be adjacent to more than one
+    of <math|y<rsub|1>,y<rsub|2>,\<ldots\>,y<rsub|d>>
 
     <\equation*>
       <around*|(|deg<around*|(|y<rsub|1>|)>-1|)>+<around*|(|deg<around*|(|y<rsub|2>|)>-1|)>+\<ldots\>+<around*|(|deg<around*|(|y<rsub|d>|)>-1|)>+d+1\<leqslant\>n
     </equation*>
 
+    Then
+
     <\equation*>
-      <frac|1|n><around*|(|<big|sum><rsub|y\<in\>V<around*|(|G|)>>deg<around*|(|y|)>|)><rsup|2>\<leqslant\><big|sum><rsub|y\<in\>V<around*|(|G|)>>deg<around*|(|y|)><rsup|2>=<big|sum><rsub|x\<in\>V<around*|(|G|)>><big|sum><rsub|y\<sim\>x>deg<around*|(|y|)>\<leqslant\>n<around*|(|n-1|)>
+      <frac|1|n><around*|(|2<around*|\||E|(>G|)><around*|\|||)><rsup|2>=<frac|1|n><around*|(|<big|sum><rsub|y\<in\>V<around*|(|G|)>>deg<around*|(|y|)>|)><rsup|2>\<leqslant\><big|sum><rsub|y\<in\>V<around*|(|G|)>>deg<around*|(|y|)><rsup|2>=<big|sum><rsub|x\<in\>V<around*|(|G|)>><big|sum><rsub|y
+      adjacent to x>deg<around*|(|y|)>\<leqslant\>n<around*|(|n-1|)>
     </equation*>
 
     <\equation*>
-      <frac|1|n>+4e<around*|(|G|)><rsup|2>=n<around*|(|n-1|)>
+      <frac|1|n>+4E<around*|(|G|)><rsup|2>=n<around*|(|n-1|)>??
     </equation*>
+  </proof>
 
-    <\enumerate-roman>
-      <item><math|n=1+d<rsup|2>,d:a positive interger>
+  \;
 
-      <item>The grtph is regular(THe equality in c-s inqualigty holds four
-      situation)
+  <\enumerate-roman>
+    <item><math|n=1+d<rsup|2>,d:a positive interger>
 
-      <item>no <math|\<Delta\>>(<math|girth\<geqslant\>5>)
+    <item>The grith is regular(The equality in c-s inqualigty holds four
+    situation)
 
-      <item><math|\<forall\>x,y>, <math|xy\<in\>E<around*|(|G|)>
-      \<exists\>>!z,xz, yz <math|\<in\>E<around*|(|G|)>>
-    </enumerate-roman>
+    <item>no <math|\<Delta\>>(<math|girth\<geqslant\>5>)
 
-    A=the adjecncy matrix of G
+    <item><math|\<forall\>x,y>, <math|xy\<in\>E<around*|(|G|)>
+    \<exists\>>!z,xz, yz <math|\<in\>E<around*|(|G|)>>
+  </enumerate-roman>
 
-    <\equation*>
-      <around*|(|A<rsup|2>|)><rsub|xy>=the #of walks of lenth 2 between x and
-      d
-    </equation*>
+  A=the adjecncy matrix of G
 
-    <math|Vx\<in\>V<around*|(|G|\<nobracket\>>>),
-    <math|<big|sum><rsub|y\<sim\>x>deg<around*|(|y|)>\<leqslant\>-1>
+  <\equation*>
+    <around*|(|A<rsup|2>|)><rsub|xy>=the #of walks of lenth 2 between x and d
+  </equation*>
 
-    <math|A<rsup|2>=d I,+0. A<rsub|+1<around*|(|J-I-A|)>>>
+  <math|Vx\<in\>V<around*|(|G|\<nobracket\>>>),
+  <math|<big|sum><rsub|y\<sim\>x>deg<around*|(|y|)>\<leqslant\>-1>
 
-    <math|AJ=dJ>
+  <math|A<rsup|2>=d I,+0. A<rsub|+1<around*|(|J-I-A|)>>>
 
-    eigenvalues s of A
+  <math|AJ=dJ>
 
-    (1) For adj martix A odf G trhe eighenvals are real
-    <math|\<exists\>\<alpha\>> baisis of <math|R<rsup|n>> consosting
-    eigenveacotr of A.
+  eigenvalues s of A
 
-    (2) A d-regualr gra;phn G has d as an eigenval . Infact d is the larigest
-    eigencal. The mulitip of d as an eigenval=#connected comps of G
+  (1) For adj martix A odf G trhe eighenvals are real
+  <math|\<exists\>\<alpha\>> baisis of <math|R<rsup|n>> consosting
+  eigenveacotr of A.
 
-    <\enumerate-roman>
-      <item><math|1+f+g=n=1+d<rsup|2>>
+  (2) A d-regualr gra;phn G has d as an eigenval . Infact d is the larigest
+  eigencal. The mulitip of d as an eigenval=#connected comps of G
 
-      <item><math|d+f<rsub|r>+g=0>
-
-      <item>
-
-      <item>
-    </enumerate-roman>
-
-    \;
+  <\enumerate-roman>
+    <item><math|1+f+g=n=1+d<rsup|2>>
 
     <item><math|d+f<rsub|r>+g=0>
-  </proof>
+
+    <item>
+
+    <item>
+  </enumerate-roman>
+
+  \;
+
+  <item><math|d+f<rsub|r>+g=0>
 
   \;
 </body>

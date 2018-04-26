@@ -1,12 +1,18 @@
 <TeXmacs|1.99.5>
 
-<style|generic>
+<style|<tuple|generic|number-long-article>>
 
 <\body>
-  <doc-data|<doc-title|Graphs>|<doc-author|<author-data|<author-name|yuejian
-  mo>|<\author-affiliation>
-    <date|>
-  </author-affiliation>>>>
+  <\hide-preamble>
+    \;
+
+    <assign|theorem-text|<macro|<localize|Theorem>>>
+  </hide-preamble>
+
+  <doc-data|<doc-title|Ÿ1.Graphs>|<doc-author|<\author-data|<author-name|yuejian
+  mo>>
+    \;
+  </author-data>>|<doc-date|<date>>>
 
   D<with|font-series|bold|ef:> A graph <math|G> is a pair
   <math|<around*|(|V<around*|(|G|)>,E<around*|(|G|)> |)>> together with a
@@ -14,9 +20,16 @@
   an unordered pair <math|x,y\<in\>V<around*|(|G|)>>. <math|V<around*|(|G|)>
   is th set of vertices,E<around*|(|G|)> is the set of edges.>
 
-  A graph is called simple if we do not allow loops or mulitiple edges. A
-  simple graph <math|G> is a pair <math|<around*|(|V<around*|(|G|)>,E<around*|(|G|)>|)>>
-  where <math|E<around*|(|G|)>\<in\><around*|(|<rsup|V<around*|(|G|)>><rsub|2>|)>>.
+  <\definition>
+    A graph is called simple if we do not allow loops or mulitiple edges. A
+    simple graph <math|G> is a pair <math|<around*|(|V<around*|(|G|)>,E<around*|(|G|)>|)>>
+    where <math|E<around*|(|G|)>\<in\><around*|(|<rsup|V<around*|(|G|)>><rsub|2>|)>>.
+  </definition>
+
+  <\definition>
+    The complete graph <math|K<rsub|n>> on vertices is the simple graph that
+    has all <math|<around*|(|<rsup|n><rsub|2>|)>> possible edges.
+  </definition>
 
   <math|X> is incident
 
@@ -37,7 +50,9 @@
   are joined by an edge in one graph, then the coreesponding vertices are
   joined by an edge in the other graph.
 
-  Thrm 1.1. The number of vertifces with add odd degrees must be even.
+  <\theorem>
+    The number of vertices with add odd degrees must be even.
+  </theorem>
 
   Subgraph
 
