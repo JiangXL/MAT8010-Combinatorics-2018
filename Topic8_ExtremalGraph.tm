@@ -11,6 +11,11 @@
     \;
   </author-data>>>
 
+  In general, an extremal graph is the largest graph of order <math|n> which
+  does not contain a given graph <math|G> as a subgraph. Turan studied
+  extremal graphs that do not contain a complete graphs <math|K<rsub|p>> as a
+  subgraph.[1]
+
   How many edges must a simple graph on <math|n> vertices have to gurantee
   the graph to have a triangle?
 
@@ -128,15 +133,18 @@
   The <with|font-shape|italic|girth> of a graph <with|font-shape|italic|G> =
   the size of a smallest cycle(polygon <math|P<rsub|n>>) in
   <with|font-shape|italic|G>. (If <with|font-shape|italic|G> has no cycles
-  then we say that girth of <math|G> is <math|\<infty\>>, such as forest)
+  then we say that girth of <math|G> is <math|\<infty\>>, such as forest).
+  Here are different state of girth:
 
-  Girth \<gtr\>= 3<space|1em>\<less\>=\<gtr\> G is simple
+  <\itemize-dot>
+    <item>Girth <math|\<geqslant\>>3 <math|\<Leftrightarrow\>> <math|G> is
+    simple
 
-  Girth \<gtr\>= 4 \<less\>=\<gtr\> G is simple and no <math|\<Delta\>>
+    <item>Girth <math|\<geqslant\>4> <math|\<Leftrightarrow\>> <math|G> is
+    simple and no <math|\<mathLaplace\>>
 
-  G has girth \<gtr\>=5 \<less\>=\<gtr\>
-
-  \;
+    <item>Girth <math|\<geqslant\>5> <math|\<Leftrightarrow\>>\ 
+  </itemize-dot>
 
   <with|font-series|bold|Theorem 4.2.> If a graph <with|font-shape|italic|G>
   on <with|font-shape|italic|n> vertices has more than
@@ -219,8 +227,22 @@
 
   <item><math|d+f<rsub|r>+g=0>
 
+  <section*|References>
+
+  <\itemize-dot>
+    <item>[1]. http://mathworld.wolfram.com/ExtremalGraph.html
+  </itemize-dot>
+
+  \;
+
   \;
 </body>
 
 <initial|<\collection>
 </collection>>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|<with|mode|<quote|math>|<with|font-series|<quote|bold>|math-font-series|<quote|bold>|<rigid|\<ast\>>>>|?>>
+  </collection>
+</references>
