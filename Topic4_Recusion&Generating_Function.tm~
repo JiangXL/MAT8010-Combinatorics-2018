@@ -10,7 +10,7 @@
   </author-affiliation>>>>
 
   Given a sequence <math|<around*|{|a <rsub|n>|}><rsub|n=0><rsup|\<infty\>>>
-  of complex number, we define\ 
+  of \ \ number, we define\ 
 
   <\equation*>
     f<around*|(|x|)>:=<big|sum><rsup|\<infty\>><rsub|n=0>a<rsub|n>x<rsup|n>,
