@@ -16,6 +16,8 @@
   A is the sum of l premutation matices.
 
   P.Hall, M.Hall
+
+  \;
 </body>
 
 <initial|<\collection>

@@ -204,7 +204,7 @@
 
   <math|AJ=dJ>
 
-  eigenvalues s of A
+  eigenvalues s of Ahomework1.tm
 
   (1) For adj martix A odf G trhe eighenvals are real
   <math|\<exists\>\<alpha\>> baisis of <math|R<rsup|n>> consosting
@@ -227,6 +227,10 @@
 
   <item><math|d+f<rsub|r>+g=0>
 
+  Let <math|<around*|{|A<rsub|1>,A<rsub|2>\<comma\>\<ldots\>,|}>>
+
+  Sperner families
+
   <section*|References>
 
   <\itemize-dot>
@@ -246,3 +250,13 @@
     <associate|auto-1|<tuple|<with|mode|<quote|math>|<with|font-series|<quote|bold>|math-font-series|<quote|bold>|<rigid|\<ast\>>>>|?>>
   </collection>
 </references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|References>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-1><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>
