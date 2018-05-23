@@ -9,6 +9,11 @@
     <date|>
   </author-affiliation>>>>
 
+  Thm 5.5: Let <math|A=<around*|(|a<rsub|i j>|)>> be an <math|n\<times\>n>
+  matrix with nonegative integers as entries, such that every row and column
+  of <math|A> has sum <math|l>. Then <math|A> is the sum of <math|l>
+  permutation matrices.
+
   Thm 6.3: Let <math|\<Eta\>>
 
   EKR

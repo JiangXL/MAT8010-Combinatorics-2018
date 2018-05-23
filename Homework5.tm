@@ -102,18 +102,31 @@
 
     <with|font-shape|italic|Proof:>
 
-    \;
+    c
 
-    <item>For <math|n\<geqslant\>6>, let <math|<with|math-font|cal|H>\<leq\>2<rsup|<around*|[|n|]>><rsup|>>
+    <item>For <math|n\<geq\>6>, let <math|<with|math-font|cal|H>\<leq\>2<rsup|<around*|[|n|]>><rsup|>>
     be such that for any two distinct <math|A,B\<in\><with|math-font|cal|H>>,
     <math|<around*|\||A\<cap\>B|\|>> is even. Prove that
-    <math|<with|math-font|cal|H>\<geq\>2<rsup|n/2>> if\ 
+    <math|<with|math-font|cal|H>\<geq\>2<rsup|n/2>> if
+    <with|font-shape|italic|n> is even, and
+    <math|<with|math-font|cal|H>\<leq\>1+2<rsup|<around*|(|n-1|)>/2>> if
+    <math|n> is odd. (Here note that we do not require
+    <math|<around*|\||A|\|>> to be even for
+    <math|A\<in\><with|math-font|cal|H>>)
+
+    <with|font-shape|italic|Proof:>
+
+    \;
 
     <item>Suppose that in a town of <math|n> residents, every club has an
-    even number of menbers, and any two distinct clubs have an odd number of
+    even number of members, and any two distinct clubs have an odd number of
     members in common. Then the maximum of clubs is
     <with|font-shape|italic|n> if <with|font-shape|italic|n> is odd, and
     <with|font-shape|italic|n-1> if <with|font-shape|italic|n> is even.
+
+    <with|font-shape|italic|Proof:>
+
+    \;
 
     <item>Let <math|<with|math-font|cal|A>=<around*|{|A<rsub|1>,\<ldots\>,A<rsub|m>|}>>be
     a collection of <with|font-shape|italic|m> distinct subsets of
@@ -124,6 +137,12 @@
     <\equation*>
       m\<leqslant\><around*|(|<tabular*|<tformat|<table|<row|<cell|n-1>>|<row|<cell|<around*|[|<frac|n|2>|]>-1>>>>>|)>
     </equation*>
+
+    <\with|font-shape|italic>
+      Proof:
+    </with>
+
+    D
   </enumerate-numeric>
 
   \;
