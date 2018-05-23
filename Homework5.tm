@@ -15,6 +15,28 @@
 
     Solution:
 
+    (i) Color K10 in such a way that red corresponds
+
+    to an edge of G, blue to a nonedge. There are triangles with 3 red
+
+    edges, 2 red and 1 blue, 2 blue and 1 red, and finally with 3 blue
+
+    edges. Let ai (i = 1, 2, 3, 4) be the numbers of these. Set up a
+
+    system of equations and inequalities for these numbers, expressed
+
+    in the degrees of the vertices of G. These should show that there
+
+    are at least four triangles in G and equality can then be excluded,
+
+    again by looking at the equations.
+
+    (ii) A second solution is as follows. Show there is a triangle.
+
+    Then consider a triangle, the ary 7-set, and edges in between. This
+
+    gives a number of new triangles of two types; estimate it.
+
     \;
 
     <item>Show that a graph on <math|n> vertices that does not contain a
@@ -142,7 +164,8 @@
       Proof:
     </with>
 
-    D
+    Show that large sets can be replaced by their complements, and apply
+    Theorem 6.5.
   </enumerate-numeric>
 
   \;
