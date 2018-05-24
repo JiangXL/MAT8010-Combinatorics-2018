@@ -144,6 +144,8 @@
 
   Proof
 
+  \;
+
   <section|Reference>
 
   <\itemize>
