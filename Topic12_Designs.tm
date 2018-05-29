@@ -11,29 +11,44 @@
   In this chapter we give an introduction to a large and important area of
   combinatorial theory which is known as <with|font-shape|italic|design
   theory>. The most general object that is studied in this theory is a
-  so-called <with|font-shape|italic|incidence structure>. This is a triple
-  <math|<with|font-series|bold|S>=<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>,<with|font-series|bold|I>|)>>,
-  where :
+  so-called <with|font-shape|italic|incidence structure>, which is a triple
+  <math|<with|font-series|bold|S>=<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>,<with|font-series|bold|I>|)>>.Let
+  <math|v\<geqslant\>k\<geqslant\>t\<geqslant\>1>, A
+  <math|t>-<math|<around*|(|v,k,\<lambda\>|)>>design on the point set
+  <math|<with|math-font|cal|P>> is an incidence(a
+  pair<math|<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>|)>>),
+  where:
 
   <\enumerate-alpha>
-    <item><math|<with|math-font|cal|P>> is a set, the elements of which are
-    called <with|font-shape|italic|points>;
+    <item><math|<around*|\|||\<nobracket\>><with|math-font|cal|P><around*|\|||\<nobracket\>>=v>
+    is a set, the elements of which are called
+    <with|font-shape|italic|points>.\ 
 
-    <item><math|<with|math-font|cal|B>> is family of <math|k-subset> of
-    <math|<with|math-font|cal|P>>, <math|<with|math-font|cal|B>> is a set,
-    the elements of which are called <with|font-shape|italic|blocks>.
+    <item><math|<with|math-font|cal|B>> is
+    collections(\<#5141\>\<#8BB8\>\<#6709\>\<#91CD\>\<#590D\>\<#7684\>\<#5143\>\<#7D20\>)
+    of <math|k>-subset<math|> of <math|<with|math-font|cal|P>>, the elements
+    of which are called <with|font-shape|italic|blocks>.
 
     <item><math|\<forall\>T\<subset\><with|math-font|cal|P>>,
     <math|<around*|\||T|\|>=t>, <math|T> appear in exactly <math|\<lambda\>>
-    blocks. <with|font-series|bold|<math|I>> is an incidence relation between
+    blocks(what is <math|\<lambda\>> blocks? or this is <math|t>).
+    <with|font-series|bold|<math|I>> is an incidence relation between
     <math|<with|math-font|cal|P>> and <math|<with|math-font|cal|B>> (i.e.
     <math|<with|font-series|bold|I>\<subseteq\><with|math-font|cal|P>\<times\><with|math-font|cal|B>>).
     The elements of <with|font-series|bold|<math|I>> are called
     <with|font-shape|italic|flags>.
   </enumerate-alpha>
 
+  Consider the points and lines of the Euclidean plane as the two types of
+  objects and ignore all the properties of this geometry except for the
+  relation of which points are on which lines for all the pionts and lines.
+
+  <small-figure|<image|img/Inzidenz-struktur.svg.png|200pt|||>|Example 1:
+  points and lines of the Euclidean plane. Example 2: points and circels.
+  Exmaple3: finite incidence strcture defined by an incidence matrix >
+
   <math|t<around*|(|v,k,\<lambda\>|)>> design
-  <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>>
+  <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>>, steriner
 
   When <math|\<lambda\>=1>, an <math|S<rsub|\<lambda\>=1><around*|(|t,k,v|)>>
   is denoted simple by <math|S<around*|(|t,k,v|)>>, which is called a Steiner
@@ -41,23 +56,25 @@
 
   \;
 
-  Examp
+  Examples
 
   <math|<around*|\|||\<nobracket\>>B<around*|\|||\<nobracket\>>>
 
   <math|\<forall\>B\<in\><with|math-font|cal|B>>, so <math|B> is a 2-dim
   subset of <math|V>, <math|<around*|\||B|\|>=q+1>.
 
-  claim:\ 
+  claim: The fano Pane
 
   <math|<around*|(|<math|<with|math-font|cal|P>>,<with|math-font|cal|B>,\<varepsilon\>|)>>
-  is a <math|2-<around*|(|q<rsup|2>+q+1,q+1,1|)>> design.
+  is a <math|2-<around*|(|q<rsup|2>+q+1,q+1,1|)>> design. (2-(7,3,1)
 
-  \;
+  <image|img/FanoPlane_700.gif|148pt|128pt||>
 
   Example
 
   Mass lottery system,\ 
+
+  \;
 
   <with|font-series|bold|Theorem 19.2> The number of blocks of an
   <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>> is\ 
@@ -86,16 +103,43 @@
     b<around*|(|<tabular|<tformat|<table|<row|<cell|<tabular|<tformat|<table|<row|<cell|k>>|<row|<cell|t>>>>>>>>>>|)>=\<lambda\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|t>>>>>|)>
   </equation*>
 
-  Theorem 19.3 Let <math|D=<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>|)>>
-  be a <math|t-<around*|(|v,k,\<lambda\>|)>> design. Let\ 
+  <with|font-series|bold|Theorem 19.3> Given <math|i>,
+  <math|0\<leqslant\>i\<leqslant\>t>, the number of blocks incident with all
+  the points of an <math|i>-subset <math|I> of <math|P> is
 
   <\equation*>
-    <with|math-font|cal|B>
+    b<rsub|i>=\<lambda\><around*|(|<tabular|<tformat|<table|<row|<cell|v-i>>|<row|<cell|t-i>>>>>|)>/<around*|(|<tabular|<tformat|<table|<row|<cell|k-i>>|<row|<cell|t-i>>>>>|)>
   </equation*>
 
-  \;
+  That is, every <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>> is also an
+  i-design for <math|i\<leqslant\>t>.(\<#8981\>\<#6EE1\>\<#8DB3\>\<#6574\>\<#9664\>\<#6761\>\<#4EF6\>)
 
   \;
+
+  <with|font-series|bold|Theorem 19.4> <math|\<forall\>j>,
+  <math|0\<leqslant\>j\<leqslant\>t>, the # of blocks of an
+  <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>> that are from a <math|j>-set
+  <math|J> of <math|P>\ 
+
+  <\equation*>
+    b<rsup|j>=\<lambda\><around*|(|<tabular|<tformat|<table|<row|<cell|v-j>>|<row|<cell|k>>>>>|)>/<around*|(|<tabular|<tformat|<table|<row|<cell|v-t>>|<row|<cell|k-t>>>>>|)>
+  </equation*>
+
+  count pairs <math|<around*|(|J,B|)>>, <math|J\<leqslant\>P>\<#FF0C\><math|<around*|\||J|\|>=j>,
+  <math|B\<in\>B<rprime|'>>,<math|J\<cap\>B=\<phi\>>.
+
+  <with|font-series|bold|Corollary>. If <math|i+j\<leqslant\>t>, then the
+  number of blocks of an<math|S<rsub|\<lambda\>><around*|(|t,k,v|)>>
+  thatconain <math|I<around*|(|<around*|\||I|\|>=i,I\<subseteq\>P|)>> and
+  disjoint from <math|J<around*|(|<around*|\||T|\|>=j,T\<subseteq\>P|)>> ,
+  <math|I\<cap\>J=\<phi\>>.
+
+  <\equation*>
+    b<rsub|i><rsup|j>=\<lambda\><around*|(|<tabular|<tformat|<table|<row|<cell|v-i-j>>|<row|<cell|k-i>>>>>|)>/<around*|(|<tabular|<tformat|<table|<row|<cell|v-t>>|<row|<cell|k-t>>>>>|)>
+  </equation*>
+
+  <with|font-series|bold|Theorem 19.5> In any notrivial Steiner system
+  <math|S<around*|(|t,k,v|)>>
 
   \;
 
@@ -132,37 +176,96 @@
   </enumerate-Roman>
 
   <\equation*>
-    r=b<rsub|1>=<frac|\<lambda\><around*|(|v-i|)>|>
+    r=b<rsub|1>=<frac|\<lambda\><around*|(|v-i|)>|<around*|(||)>>
   </equation*>
 
-  Thm 19.6 For a <math|2-<around*|(|v,k,\<lambda\>|)>> design with
-  <math|v\<gtr\>k>, we have,
+  <with|font-series|bold|Thm 19.6> For a <math|2-<around*|(|v,k,\<lambda\>|)>>
+  design with <math|v\<gtr\>k>, we have
 
   <\equation*>
-    b\<gtr\>v
+    b\<geqslant\>v.
   </equation*>
 
-  Proof
+  Proof: Since <math|v\<gtr\>k>, we have <math|r\<gtr\>k> by (19.4). Since
+  <math|J> has one eigenvalue <math|v> and its other eigenvalues are 0, the
+  matrix on the right-hand side of (19.7) has <math|v-1>eigenvlues.
+  <math|<around*|(|r-v|)>> and one eigenvlues
+  <math|<around*|(|r-\<lambda\>|)>+\<lambda\>v=r k>.\ 
 
-  \;
+  <with|font-series|bold|Theorem 19.7>. If a
+  <math|2>-<math|<around*|(|v,k,\<lambda\>|)>> design has <math|b=v> blocks
+  and <math|v> is even, then <math|k-\<lambda\>> must be a square.
+
+  (b \<#662F\>\<#5F69\>\<#7968\>\<#7684\>\<#6570\>\<#91CF\>)
+
+  <with|font-series|bold|Theorem 19.8>(Wilson-Pter) For an
+  <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>> with <math|t\<geqslant\>2s>,
+  and <math|v\<geqslant\>k+s>, we have \ <math|b\<geqslant\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|s>>>>>|)>>
+  <with|font-shape|italic|Proof>: We introduce the
+  <with|font-shape|italic|higher incidence matrices> of the
+  <with|font-shape|italic|t>-design <math|<with|math-font|cal|D>=S<rsub|\<lambda\>><around*|(|t,k,v|)>>.
+  For <math|i=0,1,2\<ldots\>,>let <math|N<rsub|i>> denote the
+  <math|<around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|i>>>>>|)>\<times\>b>
+  matrix with rows indexed by the <with|font-shape|italic|i>-element subsets
+  of points, columns indexed by the blocks, and with entry 1 in row <math|Y>
+  and column <math|B> if <math|Y\<subseteq\>B>, 0 otherwise. For
+  <math|0\<leqslant\>i\<leqslant\>j\<leqslant\>v>, we use <math|W<rsub|i j>>
+  to denote the <math|i>-th incidence matrix of the incidence structure\ 
+
+  For <math|0\<leqslant\>i\<leqslant\>j\<leqslant\>v>, we use <math|W<rsub|i
+  j>> to denote the <math|i>-th incidence matrix of the incidence structure
+  whose blocks are all the <with|font-shape|italic|j>-element subsets of a
+  <math|v>-set. Thus <math|W<rsub|i>j> is a
+  <math|<around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|i>>>>>|)>\<times\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|j>>>>>|)>>
+  matrix. We claim that
+
+  <\equation*>
+    N<rsub|s>N<rsub|S><rsup|T>=<big|sum><rsub|i=0><rsup|s>b<rsub|2s-i><rsup|i>W<rsup|T><rsub|i
+    s>W<rsub|i s>
+  </equation*>
+
+  To see this, note that <math|N<rsub|S>N<rsup|T><rsub|S>> has rows indexed
+  by <math|s>-element subsets <math|E> and columns indexed by
+  <math|s>-elements subsets <math|F> of the points, and for given <math|E>
+  and <math|F>, the entry in row <math|E> and column <math|F>
+
+  <with|font-series|bold|Theorem 19.10> Let <math|D=>
 
   <section|Reference>
 
   <\itemize>
     <item>https://en.wikipedia.org/wiki/Kirkman%27s_schoolgirl_problem
 
-    <item>
+    <item>https://en.wikipedia.org/wiki/Incidence_structure
+
+    <item>http://mathworld.wolfram.com/FanoPlane.html
   </itemize>
 </body>
 
 <\initial>
   <\collection>
-    <associate|page-medium|paper>
+    <associate|page-medium|papyrus>
   </collection>
 </initial>
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|1|?>>
+    <associate|auto-1|<tuple|1|2>>
+    <associate|auto-2|<tuple|1|4>>
   </collection>
 </references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|figure>
+      <tuple|normal|<surround|<hidden|<tuple>>||Example 1: points and lines
+      of the Euclidean plane. Example 2: points and circels. Exmaple3: finite
+      incidence strcture defined by an incidence matrix >|<pageref|auto-1>>
+    </associate>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Reference>
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-2><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>
