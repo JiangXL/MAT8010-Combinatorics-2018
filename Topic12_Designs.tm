@@ -200,7 +200,8 @@
 
   <with|font-series|bold|Theorem 19.8>(Wilson-Pter) For an
   <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>> with <math|t\<geqslant\>2s>,
-  and <math|v\<geqslant\>k+s>, we have \ <math|b\<geqslant\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|s>>>>>|)>>
+  and <math|v\<geqslant\>k+s>, we have \ <math|b\<geqslant\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|s>>>>>|)>>\ 
+
   <with|font-shape|italic|Proof>: We introduce the
   <with|font-shape|italic|higher incidence matrices> of the
   <with|font-shape|italic|t>-design <math|<with|math-font|cal|D>=S<rsub|\<lambda\>><around*|(|t,k,v|)>>.
@@ -227,9 +228,61 @@
   To see this, note that <math|N<rsub|S>N<rsup|T><rsub|S>> has rows indexed
   by <math|s>-element subsets <math|E> and columns indexed by
   <math|s>-elements subsets <math|F> of the points, and for given <math|E>
-  and <math|F>, the entry in row <math|E> and column <math|F>
+  and <math|F>, the entry in row <math|E> and column <math|F>.
+
+  s=1,t=2 tight 2 design are called symmetri designs(square matrix). We only
+  known one tight design <math|S<around*|(|4,7,23|)>>1
+
+  \;
+
+  Thm 19.9 Let <math|N> be the incidence martix of a sym
+  <math|2-<around*|(|v,k,\<lambda\>|)>> design. Then <math|N<rsup|T>> is also
+  the incidence matrix of a design.
+
+  Assumeth that the # of blocks <math|<around*|(|B<rprime|'>|)> > that meet
+  in i point is <math|a<rsub|i>> .
+
+  <\enumerate-numeric>
+    <item>
+  </enumerate-numeric>
+
+  \;
 
   <with|font-series|bold|Theorem 19.10> Let <math|D=>
+
+  \;
+
+  Symmetric <math|<around*|(|v,k,\<lambda\>|)>>-designs
+
+  \;
+
+  Examples: Hadarnar d matrics
+
+  A hadamard matrix of order n is an nxn matriix H with <math|\<pm\>1>
+  entries, such that <math|H H<rsup|T>=n I>
+
+  Them (18.1) If
+
+  \;
+
+  <with|font-series|bold|Thm 19.11>: If <math|v,k,\<lambda\>> are integers
+  such that <math|\<lambda\><around*|(|v-1|)>=k<around*|(|k-1|)>>, then for
+  the existence of a symmetric <math|2-<around*|(|v,k,\<lambda\>|)>> design
+  it is necessary that:
+
+  <\enumerate-roman>
+    <item>If <math|v> is even then <math|k-\<lambda\>> is a square
+
+    <item>if <math|v> is odd, then the eequation
+    <math|z<rsup|2>=<around*|(|k-\<lambda\>|)>x<rsup|2>+<around*|(|-1|)><rsup|<around*|(|v-1|)>/2>\<lambda\>
+    y<rsup|2>> has a solution in integers <math|x,y,z>, not all zero
+  </enumerate-roman>
+
+  Proof:
+
+  Let <math|D> be a symmetric <math|2-<around*|(|v,k,\<lambda\>|)>> design
+  with incidence matrix <math|N=<around*|(|n<rsub|i j>|)>> and writen
+  <math|n\<assign\>k-\<lambda\>>. We now introduce <math|v> linear form
 
   <section|Reference>
 
