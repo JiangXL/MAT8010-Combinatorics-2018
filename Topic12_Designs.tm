@@ -8,6 +8,8 @@
     <date|>
   </author-affiliation>>>>
 
+  \<#7EC4\>\<#5408\>\<#8BBE\>\<#8BA1\>\<#FF0C\>\<#7B80\>\<#79F0\>\<#8BBE\>\<#8BA1\>\<#FF0C\>\<#662F\>\<#5C06\>\<#96C6\>\<#5408\>\<#7684\>\<#5143\>\<#7D20\>\<#5206\>\<#6210\>\<#6EE1\>\<#8DB3\>\<#67D0\>\<#4E9B\>\<#6027\>\<#8D28\>\<#7684\>\<#5B50\>\<#96C6\>\<#7684\>\<#4E00\>\<#79CD\>\<#5E03\>\<#5C40\>\<#65B9\>\<#6CD5\>\<#FF0E\>
+
   In this chapter we give an introduction to a large and important area of
   combinatorial theory which is known as <with|font-shape|italic|design
   theory>. The most general object that is studied in this theory is a
@@ -284,6 +286,68 @@
   with incidence matrix <math|N=<around*|(|n<rsub|i j>|)>> and writen
   <math|n\<assign\>k-\<lambda\>>. We now introduce <math|v> linear form
 
+  Pf:(ii)
+
+  A: an inciduce matrix of the <math|2-<around*|(|v,k,\<lambda\>|)>> design
+
+  <math|B=<around*|(||)>>
+
+  pmf of the lemma
+
+  (1) <math|t\<gtr\>0,t=a<rsub|1><rsup|2>+a<rsub|2><rsup|2>+>
+
+  (2) <math|<around*|(|a<rsub|1><rsup|2>+a<rsub|2><rsup|2>+a<rsub|3><rsup|2>+a<rsub|4><rsup|4>|)><around*|(|x<rsub|1><rsup|2>+x<rsub|2><rsup|2>+x<rsub|3><rsup|2>+x<rsub|4><rsup|2>|)>=y<rsub|1><rsup|2>\<#FF0B\>y<rsub|2><rsup|2>+y<rsub|3><rsup|2>+y<rsub|4><rsup|2>>
+
+  <\equation*>
+    <around*|(|<tabular|<tformat|<table|<row|<cell|y<rsub|1>>>|<row|<cell|y<rsub|2>>>|<row|<cell|y<rsub|3>>>|<row|<cell|y<rsub|4>>>>>>|)>=<around*|(|<tabular|<tformat|<table|<row|<cell|a<rsub|1>>|<cell|-a<rsub|2>>|<cell|-a<rsub|3>>|<cell|-a<rsub|4>>>|<row|<cell|a<rsub|2>>|<cell|a<rsub|1>>|<cell|>|<cell|>>|<row|<cell|>|<cell|>|<cell|>|<cell|>>|<row|<cell|>|<cell|>|<cell|>|<cell|>>>>>|)><around*|(|<tabular|<tformat|<table|<row|<cell|>>|<row|<cell|>>>>>|)>
+  </equation*>
+
+  Example 19.10. From Example 19.7, we know that a projective plane of order
+  <math|n> exists for <math|2\<leqslant\>n\<leqslant\>9>, except possible for
+  <math|n=6>. By Theorem 19.11, a necessary condition for the existence of a\ 
+
+  Cor<space|1em>
+
+  <\math>
+    z<rsup|2>=n x<rsup|2>-y<rsup|2>
+
+    n x<rsup|2>=z<rsup|2>+y<rsup|2>=\<rightarrow\>n=\<#4E24\>\<#4E2A\>\<#6570\>\<#7684\>\<#5E73\>\<#65B9\>\<#548C\>
+  </math>
+
+  \;
+
+  An STS(v) is a <math|2-<around*|(|v,3,1|)>> design,
+
+  <\equation*>
+    <with|math-font|cal|>\<bbb-F\><rsup|*\<ast\>>=\<bbb-F\><rsub|q><inactive|<hybrid|>><around*|{|0|}>=<around*|{|1,g,g<rsup|2>,\<ldots\>,g<rsup|q-2>|}>
+  </equation*>
+
+  \;
+
+  <\equation*>
+    \<Delta\>B<rsub|i,0>=<around*|{|<tabular|<tformat|<table|<row|<cell|g<rsup|2t>-1>|<cell|,>|<cell|1-g<rsup|2t>>>|<row|<cell|/>|<cell|>|<cell|>>>>>|}>
+  </equation*>
+
+  <\equation*>
+    g<rsup|2t>-1=g<rsup|5>
+  </equation*>
+
+  <\equation*>
+    x-u=y-w\<assign\>\<varepsilon\>\<in\>\<bbb-F\><rsub|q>
+  </equation*>
+
+  <\equation*>
+    x=u+\<varepsilon\>\<in\>B<rsub|i>,\<varepsilon\>
+  </equation*>
+
+  <\equation*>
+    y=w+\<varepsilon\>\<in\>B<rsub|i,\<varepsilon\>>
+  </equation*>
+
+  \<#5DEE\>\<#65B9\>\<#6CD5\>
+
+  \;
+
   <section|Reference>
 
   <\itemize>
@@ -298,13 +362,15 @@
 <\initial>
   <\collection>
     <associate|page-medium|papyrus>
+    <associate|page-type|a4>
   </collection>
 </initial>
 
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|2>>
-    <associate|auto-2|<tuple|1|4>>
+    <associate|auto-2|<tuple|1|9>>
+    <associate|auto-3|<tuple|1|?>>
   </collection>
 </references>
 
