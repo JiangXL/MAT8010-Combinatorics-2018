@@ -8,15 +8,16 @@
     <date|>
   </author-affiliation>>>>
 
-  \<#7EC4\>\<#5408\>\<#8BBE\>\<#8BA1\>\<#FF0C\>\<#7B80\>\<#79F0\>\<#8BBE\>\<#8BA1\>\<#FF0C\>\<#662F\>\<#5C06\>\<#96C6\>\<#5408\>\<#7684\>\<#5143\>\<#7D20\>\<#5206\>\<#6210\>\<#6EE1\>\<#8DB3\>\<#67D0\>\<#4E9B\>\<#6027\>\<#8D28\>\<#7684\>\<#5B50\>\<#96C6\>\<#7684\>\<#4E00\>\<#79CD\>\<#5E03\>\<#5C40\>\<#65B9\>\<#6CD5\>\<#FF0E\>
-
   In this chapter we give an introduction to a large and important area of
   combinatorial theory which is known as <with|font-shape|italic|design
   theory>. The most general object that is studied in this theory is a
   so-called <with|font-shape|italic|incidence structure>, which is a triple
-  <math|<with|font-series|bold|S>=<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>,<with|font-series|bold|I>|)>>.Let
+  <math|<with|font-series|bold|S>=<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>,<with|font-series|bold|I>|)>>.\ 
+
+  We are more interested in highly regualar incidence structures called
+  '<with|font-shape|italic|t-designs>'. Let
   <math|v\<geqslant\>k\<geqslant\>t\<geqslant\>1>, A
-  <math|t>-<math|<around*|(|v,k,\<lambda\>|)>>design on the point set
+  <math|t>-<math|<around*|(|v,k,\<lambda\>|)>> design on the point set
   <math|<with|math-font|cal|P>> is an incidence(a
   pair<math|<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>|)>>),
   where:
@@ -28,26 +29,50 @@
 
     <item><math|<with|math-font|cal|B>> is
     collections(\<#5141\>\<#8BB8\>\<#6709\>\<#91CD\>\<#590D\>\<#7684\>\<#5143\>\<#7D20\>)
-    of <math|k>-subset<math|> of <math|<with|math-font|cal|P>>, the elements
-    of which are called <with|font-shape|italic|blocks>.
+    of <math|k>-subset<math|> of <math|<with|math-font|cal|P>>, which are
+    called <with|font-shape|italic|blocks>.
 
     <item><math|\<forall\>T\<subset\><with|math-font|cal|P>>,
     <math|<around*|\||T|\|>=t>, <math|T> appear in exactly <math|\<lambda\>>
-    blocks(what is <math|\<lambda\>> blocks? or this is <math|t>).
-    <with|font-series|bold|<math|I>> is an incidence relation between
-    <math|<with|math-font|cal|P>> and <math|<with|math-font|cal|B>> (i.e.
-    <math|<with|font-series|bold|I>\<subseteq\><with|math-font|cal|P>\<times\><with|math-font|cal|B>>).
-    The elements of <with|font-series|bold|<math|I>> are called
-    <with|font-shape|italic|flags>.
+    blocks. <with|font-series|bold|<math|I>> is an incidence relation between
+    <math|<with|math-font|cal|P>> and <math|<with|math-font|cal|B>>.
   </enumerate-alpha>
+
+  So all blocks have the same size and every
+  <with|font-shape|italic|t>-subset of the point set is contained in the same
+  number of blocks. Two different notations for such a design are widely
+  used, namely <math|t-<around*|(|v,k,\<lambda\>|)>> design and
+  <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>>. A
+  <with|font-shape|italic|Steiner system> <math|S<around*|(|t,k,v|)>> is a
+  <with|font-shape|italic|t>-design with <math|\<lambda\>=1>, and we suppress
+  the index in the notation. Most of the early theory of designs originated
+  in statistics, where 2-designs are used in design of experiments for
+  statistical analysis.(Just like Fisher compare the different varity). These
+  designs are often called <with|font-shape|italic|balanced incomplete block
+  designs>(BIBDs).
 
   Consider the points and lines of the Euclidean plane as the two types of
   objects and ignore all the properties of this geometry except for the
   relation of which points are on which lines for all the pionts and lines.
 
-  <small-figure|<image|img/Inzidenz-struktur.svg.png|200pt|||>|Example 1:
-  points and lines of the Euclidean plane. Example 2: points and circels.
+  <with|font-series|bold|Theorem 19.1.> For a linear space we have <math|b=1>
+  or <math|b\<geqslant\>v>, and equality implies that for any two lines there
+  is exactly one point incident with both.\ 
+
+  A trivial example of equality in Theorem 19.1 is a so-called
+  <with|font-shape|italic|near pencil,> a structure with one line that
+  contains all the points but one, and all pairs containing that point as
+  lines of size two.
+
+  \;
+
+  \ both.<small-figure|<image|img/Inzidenz-struktur.svg.png|200pt|||>|Example
+  1: points and lines of the Euclidean plane. Example 2: points and circels.
   Exmaple3: finite incidence strcture defined by an incidence matrix >
+
+  \;
+
+  \;
 
   <math|t<around*|(|v,k,\<lambda\>|)>> design
   <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>>, steriner
@@ -362,15 +387,14 @@
 <\initial>
   <\collection>
     <associate|page-medium|papyrus>
-    <associate|page-type|a4>
+    <associate|page-type|b5>
   </collection>
 </initial>
 
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|2>>
-    <associate|auto-2|<tuple|1|9>>
-    <associate|auto-3|<tuple|1|?>>
+    <associate|auto-2|<tuple|1|7>>
   </collection>
 </references>
 

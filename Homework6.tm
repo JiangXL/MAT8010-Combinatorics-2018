@@ -9,17 +9,27 @@
   </author-affiliation>>>>
 
   <\enumerate-numeric>
-    <item>Show that if an <math|<with|math-font|cal|S><around*|(|3,6,v|)>>
+    <item>(19B)Show that if an <math|<with|math-font|cal|S><around*|(|3,6,v|)>>
     exists, then <math|v\<equiv\>2> or 6(mod 20).
 
-    Prove:
+    Proof:
 
     Calculate <math|b<rsub|i>>, <math|i=3,2,1,0>;
     <math|b<rsub|1>\<nin\><with|math-font|Bbb*|Z>>
 
-    <item>
+    <item>(19E)Let <math|<with|math-font|cal|D>> be a
+    <math|2-<around*|(|v,k,1|)>> design with <math|b> blocks and <math|r>
+    blocks through every point. Let <math|B> be any block. Show that the
+    number of blocks that meet <math|B> is at least
 
-    \;
+    <\equation*>
+      k<around*|(|r-1|)><rsup|2>/<around*|[|<around*|(||)>k-1|)><around*|(|\<lambda\>-1|)>+<around*|(|r-1|]>
+    </equation*>
+
+    Show that equality holds if and only if any block not disjoint from
+    <math|B> meets it in a constant number of points.
+
+    Proof:
 
     <item>Let <math|<with|math-font|cal|S>=<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>|)>>
     be a <math|t-<around*|(|v,k,\<lambda\>|)>> design, and let
