@@ -9,10 +9,18 @@
   </author-affiliation>>>>
 
   <\enumerate-numeric>
-    <item>(19B)Show that if an <math|<with|math-font|cal|S><around*|(|3,6,v|)>>
+    <item>(19B) Show that if an <math|<with|math-font|cal|S><around*|(|3,6,v|)>>
     exists, then <math|v\<equiv\>2> or 6(mod 20).
 
     Proof:
+
+    We know <math|b\<leqslant\>t=3>, then\ 
+
+    <\equation*>
+      b<around*|(|<tabular|<tformat|<table|<row|<cell|k>>|<row|<cell|t>>>>>|)>=\<lambda\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|t>>>>>|)>\<Rightarrow\>v<around*|(|v-1|)><around*|(|v-2|)>=120b\<Rightarrow\>
+    </equation*>
+
+    \;
 
     Calculate <math|b<rsub|i>>, <math|i=3,2,1,0>;
     <math|b<rsub|1>\<nin\><with|math-font|Bbb*|Z>>
@@ -96,5 +104,8 @@
   </enumerate-numeric>
 </body>
 
-<initial|<\collection>
-</collection>>
+<\initial>
+  <\collection>
+    <associate|page-medium|paper>
+  </collection>
+</initial>

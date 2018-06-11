@@ -4,7 +4,7 @@
 
 <\body>
   <doc-data|<doc-title|Topic 12 Designs>|<doc-author|<author-data|<author-name|Yuejian
-  Mo>|<\author-affiliation>
+  Mo(Collete)>|<\author-affiliation>
     <date|>
   </author-affiliation>>>>
 
@@ -13,6 +13,15 @@
   theory>. The most general object that is studied in this theory is a
   so-called <with|font-shape|italic|incidence structure>, which is a triple
   <math|<with|font-series|bold|S>=<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>,<with|font-series|bold|I>|)>>.\ 
+
+  <\quotation>
+    Here should be the example of Fisher
+
+    divide it into six smaller areas(<with|font-shape|italic|plots>); four
+    midsized aresas-<with|font-shape|italic|blocks>
+
+    varieties <math|x<rsub|1>,x<rsub|2>,>\ 
+  </quotation>
 
   We are more interested in highly regualar incidence structures called
   '<with|font-shape|italic|t-designs>'. Let
@@ -51,55 +60,28 @@
   designs are often called <with|font-shape|italic|balanced incomplete block
   designs>(BIBDs).
 
+  \;
+
   Consider the points and lines of the Euclidean plane as the two types of
   objects and ignore all the properties of this geometry except for the
-  relation of which points are on which lines for all the pionts and lines.
+  relation of which points are on which lines for all the pionts and
+  lines.(<math|b >is number of blocks)
 
   <with|font-series|bold|Theorem 19.1.> For a linear space we have <math|b=1>
   or <math|b\<geqslant\>v>, and equality implies that for any two lines there
-  is exactly one point incident with both.\ 
+  is exactly one point incident with both. (<with|font-shape|italic|I no
+  picture here:\<less\>>)
 
   A trivial example of equality in Theorem 19.1 is a so-called
-  <with|font-shape|italic|near pencil,> a structure with one line that
-  contains all the points but one, and all pairs containing that point as
-  lines of size two.
+  <with|font-shape|italic|near pencil(fano plane),> a structure with one line
+  that contains all the points but one, and all pairs containing that point
+  as lines of size two.
 
-  \;
+  <\small-figure|<image|img/FanoPlane_700.gif|70pt|70pt|300|500>>
+    The near pencil(fano plane)
 
-  \ both.<small-figure|<image|img/Inzidenz-struktur.svg.png|200pt|||>|Example
-  1: points and lines of the Euclidean plane. Example 2: points and circels.
-  Exmaple3: finite incidence strcture defined by an incidence matrix >
-
-  \;
-
-  \;
-
-  <math|t<around*|(|v,k,\<lambda\>|)>> design
-  <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>>, steriner
-
-  When <math|\<lambda\>=1>, an <math|S<rsub|\<lambda\>=1><around*|(|t,k,v|)>>
-  is denoted simple by <math|S<around*|(|t,k,v|)>>, which is called a Steiner
-  system.
-
-  \;
-
-  Examples
-
-  <math|<around*|\|||\<nobracket\>>B<around*|\|||\<nobracket\>>>
-
-  <math|\<forall\>B\<in\><with|math-font|cal|B>>, so <math|B> is a 2-dim
-  subset of <math|V>, <math|<around*|\||B|\|>=q+1>.
-
-  claim: The fano Pane
-
-  <math|<around*|(|<math|<with|math-font|cal|P>>,<with|math-font|cal|B>,\<varepsilon\>|)>>
-  is a <math|2-<around*|(|q<rsup|2>+q+1,q+1,1|)>> design. (2-(7,3,1)
-
-  <image|img/FanoPlane_700.gif|148pt|128pt||>
-
-  Example
-
-  Mass lottery system,\ 
+    <math|b=7,\<lambda\>=1,k=3,v=7>
+  </small-figure>
 
   \;
 
@@ -112,23 +94,15 @@
 
   <with|font-shape|italic|Proof>:
 
-  Start with <math|T>
+  Count in two ways the number of pairs <math|<around*|(|T,B|)>>, where
+  <with|font-shape|italic|T> is a <math|t>-subset of
+  <math|<with|math-font|cal|P>> and <math|B> is a block incident with all
+  points of <math|T>. Start with <math|T>, then
+  <math|<around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|t>>>>>|)>\<lambda\>>.
+  Start with <math|B>, then <math|b<around*|(|<tabular|<tformat|<table|<row|<cell|k>>|<row|<cell|t>>>>>|)>>.
+  Thus <math|b<around*|(|<tabular|<tformat|<table|<row|<cell|k>>|<row|<cell|t>>>>>|)>=\<lambda\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|t>>>>>|)>>.<space|18em><math|<value|qed>>
 
-  <\equation*>
-    <around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|t>>>>>|)>\<lambda\>
-  </equation*>
-
-  Start with <math|B>,
-
-  <\equation*>
-    b<around*|(|<tabular|<tformat|<table|<row|<cell|k>>|<row|<cell|t>>>>>|)>
-  </equation*>
-
-  Thus
-
-  <\equation*>
-    b<around*|(|<tabular|<tformat|<table|<row|<cell|<tabular|<tformat|<table|<row|<cell|k>>|<row|<cell|t>>>>>>>>>>|)>=\<lambda\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|t>>>>>|)>
-  </equation*>
+  \;
 
   <with|font-series|bold|Theorem 19.3> Given <math|i>,
   <math|0\<leqslant\>i\<leqslant\>t>, the number of blocks incident with all
@@ -139,7 +113,7 @@
   </equation*>
 
   That is, every <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>> is also an
-  i-design for <math|i\<leqslant\>t>.(\<#8981\>\<#6EE1\>\<#8DB3\>\<#6574\>\<#9664\>\<#6761\>\<#4EF6\>)
+  <with|font-shape|italic|i>-design for <math|i\<leqslant\>t>.(\<#8981\>\<#6EE1\>\<#8DB3\>\<#6574\>\<#9664\>\<#6761\>\<#4EF6\>)
 
   \;
 
@@ -171,6 +145,26 @@
   \;
 
   Given in two ways the number of pairs <math|<around*|(|T,B|)>>
+
+  \;
+
+  Examples
+
+  <math|<around*|\|||\<nobracket\>>B<around*|\|||\<nobracket\>>>
+
+  <math|\<forall\>B\<in\><with|math-font|cal|B>>, so <math|B> is a 2-dim
+  subset of <math|V>, <math|<around*|\||B|\|>=q+1>.
+
+  claim: The fano Pane
+
+  <math|<around*|(|<math|<with|math-font|cal|P>>,<with|math-font|cal|B>,\<varepsilon\>|)>>
+  is a <math|2-<around*|(|q<rsup|2>+q+1,q+1,1|)>> design. (2-(7,3,1)
+
+  <image|img/FanoPlane_700.gif|148pt|128pt||>
+
+  Example
+
+  Mass lottery system,\ 
 
   \;
 
@@ -381,12 +375,15 @@
     <item>https://en.wikipedia.org/wiki/Incidence_structure
 
     <item>http://mathworld.wolfram.com/FanoPlane.html
+
+    <item><with|font-shape|italic|Introduction to combanatorics>, Walter D.
+    Wallis ans John C. George
   </itemize>
 </body>
 
 <\initial>
   <\collection>
-    <associate|page-medium|papyrus>
+    <associate|page-medium|paper>
     <associate|page-type|b5>
   </collection>
 </initial>
@@ -394,16 +391,18 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|2>>
-    <associate|auto-2|<tuple|1|7>>
+    <associate|auto-2|<tuple|1|6>>
   </collection>
 </references>
 
 <\auxiliary>
   <\collection>
     <\associate|figure>
-      <tuple|normal|<surround|<hidden|<tuple>>||Example 1: points and lines
-      of the Euclidean plane. Example 2: points and circels. Exmaple3: finite
-      incidence strcture defined by an incidence matrix >|<pageref|auto-1>>
+      <\tuple|normal>
+        The near pencil(fano plane)
+
+        <with|mode|<quote|math>|b=7,\<lambda\>=1,k=3,v=7>
+      </tuple|<pageref|auto-1>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Reference>
