@@ -1,4 +1,4 @@
-<TeXmacs|1.99.5>
+<TeXmacs|1.99.6>
 
 <style|generic>
 
@@ -72,16 +72,17 @@
   is exactly one point incident with both. (<with|font-shape|italic|I no
   picture here:\<less\>>)
 
-  A trivial example of equality in Theorem 19.1 is a so-called
-  <with|font-shape|italic|near pencil(fano plane),> a structure with one line
-  that contains all the points but one, and all pairs containing that point
-  as lines of size two.
+  <\example>
+    A trivial example of equality in Theorem 19.1 is a so-called
+    <with|font-shape|italic|near pencil,> a structure with one line that
+    contains all the points but one, and all pairs containing that point as
+    lines of size two.
 
-  <\small-figure|<image|img/FanoPlane_700.gif|70pt|70pt|300|500>>
-    The near pencil(fano plane)
+    <big-figure|<image|https://upload.wikimedia.org/wikipedia/commons/5/58/Linear_space_near_pencil.png||||>|Near
+    pencil with 10 points>
+  </example>
 
-    <math|b=7,\<lambda\>=1,k=3,v=7>
-  </small-figure>
+  \;
 
   \;
 
@@ -142,82 +143,32 @@
   <with|font-series|bold|Theorem 19.5> In any notrivial Steiner system
   <math|S<around*|(|t,k,v|)>>
 
-  \;
-
-  Given in two ways the number of pairs <math|<around*|(|T,B|)>>
-
-  \;
-
-  Examples
-
-  <math|<around*|\|||\<nobracket\>>B<around*|\|||\<nobracket\>>>
-
-  <math|\<forall\>B\<in\><with|math-font|cal|B>>, so <math|B> is a 2-dim
-  subset of <math|V>, <math|<around*|\||B|\|>=q+1>.
-
-  claim: The fano Pane
-
-  <math|<around*|(|<math|<with|math-font|cal|P>>,<with|math-font|cal|B>,\<varepsilon\>|)>>
-  is a <math|2-<around*|(|q<rsup|2>+q+1,q+1,1|)>> design. (2-(7,3,1)
-
-  <image|img/FanoPlane_700.gif|148pt|128pt||>
-
-  Example
-
-  Mass lottery system,\ 
-
-  \;
-
-  Derived Designs:
-
-  Given a <math|t-k<around*|(|v,k,\<lambda\>|)>> design
-  <math|<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>|)>>, let
-  <math|\<Iota\>\<subseteq\><with|math-font|cal|P>>
-
-  define <math|<with|math-font|cal|P<rprime|'>>=<with|math-font|cal|P>/\<Iota\>>,
-  <math|<with|math-font|cal|B>>
-
-  we have <math|<around*|(|<with|math-font|cal|P<rprime|'>>,<math|<with|math-font|cal|B<rprime|'>>>|)>>
-  is <math|<around*|(|t-i|)>>-design with same <math|\<lambda\>>.
-
-  \;
-
-  2-designs are usually called <math|B<around*|\||B |\<nobracket\>>D>
-  (balanced in complte bolck sesign)
-
-  <math|v<around*|(|#of PTS|)>>, <math|b>(# of blocks), <math|k>(block
-  size),<space|1em><math|r>( replication #), <math|\<lambda\>>(index)
-
-  Necessary conditions
-
-  <\enumerate-Roman>
-    <item><math|b k=r v>
-
-    <item><math|r<around*|(|k-1|)>=\<lambda\><around*|(|v-1|)>>
-  </enumerate-Roman>
-
   <\equation*>
-    r=b<rsub|1>=<frac|\<lambda\><around*|(|v-i|)>|<around*|(||)>>
+    v\<geq\><around*|(|t+1|)><around*|(|k-t+1|)>
   </equation*>
 
-  <with|font-series|bold|Thm 19.6> For a <math|2-<around*|(|v,k,\<lambda\>|)>>
-  design with <math|v\<gtr\>k>, we have
+  <with|font-series|bold|Thm 19.6>(Fisher Inequality) For a
+  <math|2-<around*|(|v,k,\<lambda\>|)>> design with <math|v\<gtr\>k>, we have
 
   <\equation*>
     b\<geqslant\>v.
   </equation*>
 
-  Proof: Since <math|v\<gtr\>k>, we have <math|r\<gtr\>k> by (19.4). Since
+  Proof: Since <math|v\<gtr\>k>, we have <math|r\<gtr\>k> by(19.4). Since
   <math|J> has one eigenvalue <math|v> and its other eigenvalues are 0, the
-  matrix on the right-hand side of (19.7) has <math|v-1>eigenvlues.
+  matrix on the right-hand side of (19.7) has <math|v-1> eigenvlues.
   <math|<around*|(|r-v|)>> and one eigenvlues
-  <math|<around*|(|r-\<lambda\>|)>+\<lambda\>v=r k>.\ 
+  <math|<around*|(|r-\<lambda\>|)>+\<lambda\>v=r k>.
+
+  \ 
 
   <with|font-series|bold|Theorem 19.7>. If a
   <math|2>-<math|<around*|(|v,k,\<lambda\>|)>> design has <math|b=v> blocks
   and <math|v> is even, then <math|k-\<lambda\>> must be a square.
 
-  (b \<#662F\>\<#5F69\>\<#7968\>\<#7684\>\<#6570\>\<#91CF\>)
+  (b \<#662F\>\<#5F69\>\<#7968\>\<#7684\>\<#6570\>\<#91CF\>???)
+
+  \;
 
   <with|font-series|bold|Theorem 19.8>(Wilson-Pter) For an
   <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>> with <math|t\<geqslant\>2s>,
@@ -249,10 +200,20 @@
   To see this, note that <math|N<rsub|S>N<rsup|T><rsub|S>> has rows indexed
   by <math|s>-element subsets <math|E> and columns indexed by
   <math|s>-elements subsets <math|F> of the points, and for given <math|E>
-  and <math|F>, the entry in row <math|E> and column <math|F>.
+  and <math|F>, the entry in row <math|E> and column
+  <math|F>.<space|21em><math|<value|qed>>
 
-  s=1,t=2 tight 2 design are called symmetri designs(square matrix). We only
-  known one tight design <math|S<around*|(|4,7,23|)>>1
+  A class of designs of special interest are <math|b=v> tight 2 design are
+  called <with|font-shape|italic|symmetri designs(square matrix)>. We only
+  known one tight design <math|S<around*|(|4,7,23|)>>.
+
+  <\example>
+    (Fano Plane) The lines repsent blocks, but one block must represented by
+    the circle.
+
+    <big-figure|<image|img/FanoPlane.png|211px|159px||>|The Fano
+    plane(<math|b=7,\<lambda\>=1,k=3,v=7>)>
+  </example>
 
   \;
 
@@ -262,10 +223,6 @@
 
   Assumeth that the # of blocks <math|<around*|(|B<rprime|'>|)> > that meet
   in i point is <math|a<rsub|i>> .
-
-  <\enumerate-numeric>
-    <item>
-  </enumerate-numeric>
 
   \;
 
@@ -367,6 +324,62 @@
 
   \;
 
+  \;
+
+  Examples
+
+  <math|<around*|\|||\<nobracket\>>B<around*|\|||\<nobracket\>>>
+
+  <math|\<forall\>B\<in\><with|math-font|cal|B>>, so <math|B> is a 2-dim
+  subset of <math|V>, <math|<around*|\||B|\|>=q+1>.
+
+  claim: The fano Pane
+
+  <math|<around*|(|<math|<with|math-font|cal|P>>,<with|math-font|cal|B>,\<varepsilon\>|)>>
+  is a <math|2-<around*|(|q<rsup|2>+q+1,q+1,1|)>> design. (2-(7,3,1)
+
+  <image|img/FanoPlane_700.gif|148pt|128pt||>
+
+  Example
+
+  Mass lottery system,\ 
+
+  \;
+
+  Derived Designs:
+
+  Given a <math|t-k<around*|(|v,k,\<lambda\>|)>> design
+  <math|<around*|(|<with|math-font|cal|P>,<with|math-font|cal|B>|)>>, let
+  <math|\<Iota\>\<subseteq\><with|math-font|cal|P>>
+
+  define <math|<with|math-font|cal|P<rprime|'>>=<with|math-font|cal|P>/\<Iota\>>,
+  <math|<with|math-font|cal|B>>
+
+  we have <math|<around*|(|<with|math-font|cal|P<rprime|'>>,<math|<with|math-font|cal|B<rprime|'>>>|)>>
+  is <math|<around*|(|t-i|)>>-design with same <math|\<lambda\>>.
+
+  \;
+
+  2-designs are usually called <math|B<around*|\||B |\<nobracket\>>D>
+  (balanced in complte bolck sesign)
+
+  <math|v<around*|(|#of PTS|)>>, <math|b>(# of blocks), <math|k>(block
+  size),<space|1em><math|r>( replication #), <math|\<lambda\>>(index)
+
+  Necessary conditions
+
+  <\enumerate-Roman>
+    <item><math|b k=r v>
+
+    <item><math|r<around*|(|k-1|)>=\<lambda\><around*|(|v-1|)>>
+  </enumerate-Roman>
+
+  <\equation*>
+    r=b<rsub|1>=<frac|\<lambda\><around*|(|v-i|)>|<around*|(||)>>
+  </equation*>
+
+  \;
+
   <section|Reference>
 
   <\itemize>
@@ -378,12 +391,16 @@
 
     <item><with|font-shape|italic|Introduction to combanatorics>, Walter D.
     Wallis ans John C. George
+
+    <item>https://en.wikipedia.org/wiki/Linear_space_(geometry)
+
+    <item>https://en.wikipedia.org/wiki/Pencil_(mathematics)
   </itemize>
 </body>
 
 <\initial>
   <\collection>
-    <associate|page-medium|paper>
+    <associate|page-medium|papyrus>
     <associate|page-type|b5>
   </collection>
 </initial>
@@ -391,18 +408,20 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|2>>
-    <associate|auto-2|<tuple|1|6>>
+    <associate|auto-2|<tuple|2|6>>
+    <associate|auto-3|<tuple|1|?>>
+    <associate|auto-4|<tuple|1|?>>
   </collection>
 </references>
 
 <\auxiliary>
   <\collection>
     <\associate|figure>
-      <\tuple|normal>
+      <tuple|normal|<\surround|<hidden|<tuple>>|>
         The near pencil(fano plane)
 
         <with|mode|<quote|math>|b=7,\<lambda\>=1,k=3,v=7>
-      </tuple|<pageref|auto-1>>
+      </surround>|<pageref|auto-1>>
     </associate>
     <\associate|toc>
       <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>Reference>
