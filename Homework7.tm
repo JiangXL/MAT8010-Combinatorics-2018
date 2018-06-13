@@ -1,4 +1,4 @@
-<TeXmacs|1.99.6>
+<TeXmacs|1.99.5>
 
 <style|generic>
 
@@ -45,10 +45,14 @@
     if and only if every vertex <math|x> of <math|\<Gamma\>> not in <math|C>
     has exactly <math|s> neighbors in <math|C>.
 
+    \;
+
     <item*|3(21Q)>Prove the so-called <with|font-shape|italic|Friendship
     Theorem:> At a party with <math|n> people (<math|n\<gtr\>3>) every two
     persons have exactly one mutual friend. Then there is a unique person at
-    the party who is a friend of all the others. Use problem 1J.
+    the party who is a friend of all the others. Use problem \<#FF12\>1J.
+
+    \;
 
     \;
   </description>
