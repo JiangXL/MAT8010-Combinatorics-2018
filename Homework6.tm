@@ -14,18 +14,18 @@
 
     Proof:
 
-    We know <math|b\<leqslant\>t=3>, then\ 
+    We calculate <math|b<rsub|i>,i=3,2,1,0>;\ 
 
     <\equation*>
-      b<around*|(|<tabular|<tformat|<table|<row|<cell|k>>|<row|<cell|t>>>>>|)>=\<lambda\><around*|(|<tabular|<tformat|<table|<row|<cell|v>>|<row|<cell|t>>>>>|)>\<Rightarrow\>v<around*|(|v-1|)><around*|(|v-2|)>=120b\<Rightarrow\>
+      <around*|{|<tabular|<tformat|<table|<row|<cell|b<rsub|0>>|<cell|=>|<cell|<frac|v<around*|(|v-1|)><around*|(|v-2|)>|120>>>|<row|<cell|b<rsub|1>>|<cell|=>|<cell|<frac|<around*|(|v-1|)><around*|(|v-2|)>|20>>>|<row|<cell|b<rsub|2>>|<cell|=>|<cell|<frac|<around*|(|v-2|)>|4>>>|<row|<cell|b<rsub|3>>|<cell|=>|<cell|1>>>>>|\<nobracket\>>
     </equation*>
 
-    \;
+    <math|\<Longrightarrow\>v\<equiv\>2 or 6<around*|(|mod 20|)>>
 
-    Calculate <math|b<rsub|i>>, <math|i=3,2,1,0>;
-    <math|b<rsub|1>\<nin\><with|math-font|Bbb*|Z>>
+    (Calculate <math|b<rsub|i>>, <math|i=3,2,1,0>;
+    <math|b<rsub|1>\<nin\><with|math-font|Bbb*|Z>>)
 
-    <item>(19E)Let <math|<with|math-font|cal|D>> be a
+    <item>(19E) Let <math|<with|math-font|cal|D>> be a
     <math|2-<around*|(|v,k,1|)>> design with <math|b> blocks and <math|r>
     blocks through every point. Let <math|B> be any block. Show that the
     number of blocks that meet <math|B> is at least

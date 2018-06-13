@@ -1,6 +1,6 @@
 <TeXmacs|1.99.6>
 
-<style|generic>
+<style|<tuple|generic|chinese>>
 
 <\body>
   <doc-data|<doc-title|Topic 12 Designs>|<doc-author|<author-data|<author-name|Yuejian
@@ -116,7 +116,18 @@
   That is, every <math|S<rsub|\<lambda\>><around*|(|t,k,v|)>> is also an
   <with|font-shape|italic|i>-design for <math|i\<leqslant\>t>.(\<#8981\>\<#6EE1\>\<#8DB3\>\<#6574\>\<#9664\>\<#6761\>\<#4EF6\>)
 
-  \;
+  The number of blocks incident with any point, i.e, is usually denoted by
+  <math|r> (<with|font-shape|italic|replication number>). Two special cases
+  of Theorem 19.3 are the following realtions for the parameters of a
+  2-designs:(\<#60F3\>\<#4E00\>\<#60F3\>\<#FF0C\>\<#8FD9\>\<#5C31\>\<#662F\>\<#4F5C\>\<#7269\>\<#7684\>\<#603B\>\<#682A\>\<#6570\>)
+
+  <\equation*>
+    b k=v r,
+  </equation*>
+
+  <\equation*>
+    \<lambda\><around*|(|v-1|)>=r <around*|(|k-1|)>.
+  </equation*>
 
   <with|font-series|bold|Theorem 19.4> <math|\<forall\>j>,
   <math|0\<leqslant\>j\<leqslant\>t>, the # of blocks of an
