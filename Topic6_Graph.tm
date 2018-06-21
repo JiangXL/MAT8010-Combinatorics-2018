@@ -9,8 +9,8 @@
     <assign|theorem-text|<macro|<localize|Theorem>>>
   </hide-preamble>
 
-  <doc-data|<doc-title|Ÿ1.Graphs>|<doc-author|<\author-data|<author-name|yuejian
-  mo>>
+  <doc-data|<doc-title|Ÿ1. Graphs>|<doc-author|<\author-data|<author-name|Yuejian
+  Mo>>
     \;
   </author-data>>|<doc-date|<date>>>
 

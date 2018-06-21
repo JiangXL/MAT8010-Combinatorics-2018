@@ -28,8 +28,6 @@
       <math|<with|math-font|cal|D><rsup|B>> and deduce that <math|v=2k> or
       otherwise <math|k=<around*|(|\<lambda\>+1|)><around*|(|\<lambda\>+2|)>>
       or <math|k=2<around*|(|\<lambda\>+1|)><around*|(|\<lambda\>+2|)>>.
-
-      \;
     </description>
 
     <with|color|red|<\proof>
@@ -126,7 +124,7 @@
         <\equation*>
           \<flat\>=<frac|v<around*|(|v-1|)>|k>=<frac|<around*|(|k<rsup|2>-3k+2\<lambda\>+2|)><around*|(|k<rsup|2>-3k+2+\<lambda\>|)>|k\<lambda\><rsup|2>>\<Rightarrow\>k<around*|\||2
           |\<nobracket\>><around*|(|\<lambda\>+1|)><around*|(|\<lambda\>+2|)>
-          </equation*>
+        </equation*>
 
         <math|\<Rightarrow\>> <math|k=<around*|(|\<lambda\>+1|)><around*|(|\<lambda\>+2|)>>
         or <math|2<around*|(|\<lambda\>+1|)><around*|(|\<lambda\>+2|)>>
@@ -152,7 +150,7 @@
       This is a special case of the Hoffman bound, which is stated as
       follows.
 
-      If <math|C> si a coclique(independent set of vertices) in a <math|k>
+      If <math|C> is a coclique(independent set of vertices) in a <math|k>
       regular graph <math|G> on <math|v> vertices, <math|k\<gtr\>0>, then
 
       <\equation*>
@@ -160,8 +158,6 @@
       </equation*>
 
       where <math|\<theta\>> is the least eigenvalue of <math|G>.
-
-      \;
     </proof>>
 
     <space|65em>
