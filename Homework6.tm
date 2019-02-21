@@ -14,15 +14,19 @@
 
     Proof:
 
-    We calculate <math|b<rsub|i>,i=3,2,1,0>;\ 
+    We calculate <math|b<rsub|i>,i=<with|color|red|3>,2,1<with|color|red|,0>>;\ 
 
     <\equation*>
-      <around*|{|<tabular|<tformat|<table|<row|<cell|b<rsub|0>>|<cell|=>|<cell|<frac|v<around*|(|v-1|)><around*|(|v-2|)>|120>>>|<row|<cell|b<rsub|1>>|<cell|=>|<cell|<frac|<around*|(|v-1|)><around*|(|v-2|)>|20>>>|<row|<cell|b<rsub|2>>|<cell|=>|<cell|<frac|<around*|(|v-2|)>|4>>>|<row|<cell|b<rsub|3>>|<cell|=>|<cell|1>>>>>|\<nobracket\>>
+      <around*|{|<tabular|<tformat|<cwith|1|1|1|-1|color|red>|<cwith|4|4|1|-1|color|red>|<table|<row|<cell|b<rsub|0>>|<cell|=>|<cell|<frac|v<around*|(|v-1|)><around*|(|v-2|)>|120>>>|<row|<cell|b<rsub|1>>|<cell|=>|<cell|<frac|<around*|(|v-1|)><around*|(|v-2|)>|20>\<Rightarrow\>v\<equiv\>1<around*|(|mod5|)>
+      or v\<equiv\>2<around*|(|mod 5|)>>>|<row|<cell|b<rsub|2>>|<cell|=>|<cell|<frac|<around*|(|v-2|)>|4>\<Longrightarrow\>v\<equiv\>2<around*|(|mod
+      4|)>>>|<row|<cell|b<rsub|3>>|<cell|=>|<cell|1>>>>>|\<nobracket\>>
     </equation*>
+
+    Now the Chinese remaineder theorem tells us that
 
     <math|\<Longrightarrow\>v\<equiv\>2 or 6<around*|(|mod 20|)>>
 
-    (Calculate <math|b<rsub|i>>, <math|i=3,2,1,0>;
+    (Calculate <math|b<rsub|i>>, <math|i=<with|color|red|3>,2,1,<with|color|red|0>>;
     <math|b<rsub|1>\<nin\><with|math-font|Bbb*|Z>>)
 
     <item>(19E) Let <math|<with|math-font|cal|D>> be a

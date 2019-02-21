@@ -4,8 +4,8 @@
 
 <\body>
   <doc-data|<doc-title|Toptic 9 Systems of distinct
-  representatives>|<doc-author|<author-data|<author-name|yuejian
-  mo>|<\author-affiliation>
+  representatives>|<doc-author|<author-data|<author-name|Yuejian
+  Mo>|<\author-affiliation>
     <date>
   </author-affiliation>>>>
 
@@ -20,12 +20,15 @@
   that contain all the <math|1<rprime|'>s> of <math|A> is equal to the
   maximum nubmer of 1's in <math|A>, on two on a line.
 
-  <with|font-series|bold|Thm 5.5> Let <math|A=<around*|(|a<rsub|ij>|)>> be an
-  <math|n\<times\>n> matrix with nonegative integer entries such that each
-  row and each column sum of A sum to <math|l>. Then A is the sum of <math|l>
-  premutation matices.
-
-  P.Hall, M.Hall
+  <\theorem>
+    (5.5) Let <math|A=<around*|(|a<rsub|i j>|)>> be an <math|n\<times\>n>
+    matrix with nonegative integer entries such that each row and each column
+    sum of A sum to <math|l>. Then A is the sum of <math|l> premutation
+    matices.
+  </theorem>
 
   \;
 </body>
+
+<initial|<\collection>
+</collection>>
