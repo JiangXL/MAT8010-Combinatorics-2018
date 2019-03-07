@@ -34,139 +34,557 @@
   Let <math|a<rsub|n>=> # of tiling of a 2xn recrtangle by dominoes, what is
   <math|a<rsub|n>> ?
 
-  Answer1. Recurrence:
+  <\description>
+    <item*|Answer1>Recurrence:
+
+    <\math>
+      a<rsub|n>=a<rsub|n-1>+a<rsub|n-2><space|1em>for<space|1em>
+      n\<geqslant\>2
+
+      a<rsub|0>=a<rsub|1>=1<space|1em>for n\<leqslant\>1
+    </math>
+
+    Compare with Fibonacci Recurrence:
+
+    <\math>
+      F<rsub|n>=F<rsub|n-1>+F<rsub|n-2> for n\<geqslant\>2
+
+      F<rsub|0>=0,F<rsub|1>=1
+    </math>
+
+    <small-table|<tabular|<tformat|<table|<row|<cell|<math|n>>|<cell|<math|a<rsub|n>>>|<cell|<math|F<rsub|n>>>>|<row|<cell|0>|<cell|1>|<cell|0>>|<row|<cell|1>|<cell|1>|<cell|1>>|<row|<cell|2>|<cell|2>|<cell|1>>|<row|<cell|3>|<cell|3>|<cell|2>>|<row|<cell|4>|<cell|5>|<cell|3>>|<row|<cell|5>|<cell|8>|<cell|5>>|<row|<cell|6>|<cell|13>|<cell|8>>>>>|>
+
+    It will take a while to compute <math|a<rsub|1000>> this way, and we
+    don't have too much sense of its order of magnitude.
+
+    <item*|Answer2>Note that <math|a<rsub|n>=#<around*|{|sequence of
+    1<rprime|'>s and 2<rprime|'>s totalling to n|}>>
+
+    <math|n=4> <math|\<Rightarrow\>> 1+1+1+1, 1+1+2, 1+2+1,2+1+1,2+2
+
+    So <math|a<rsub|n>=<big|sum><rsup|<around*|[|n/2|]>><rsub|k=0>#<around*|{|sequence
+    of k 2<rprime|'>s and n-2k 1<rprime|'>s|}>=<big|sum><rsup|<around*|[|n/2|]>><rsub|k=0><around*|(|<tabular|<tformat|<cwith|2|2|1|1|cell-halign|c>|<table|<row|<cell|<around*|(|n-2k|)>+k>>|<row|<cell|k>>>>>|)>=<big|sum><rsup|<around*|[|n/2|]>><rsub|k=0><around*|(|<tabular|<tformat|<cwith|2|2|1|1|cell-halign|c>|<table|<row|<cell|n-k>>|<row|<cell|k>>>>>|)>>
+
+    eg: <math|a<rsub|4>=<around*|(|<rsup|4><rsub|0>|)>+<around*|(|<rsup|3><rsub|1>|)>+<around*|(|<rsup|2><rsub|2>|)>=1+3+1=5>
+
+    <item*|Answer3><math|2<rsup|th>> explicat formula
+
+    We'll derive soo that
+
+    <\equation*>
+      <tabular|<tformat|<table|<row|<cell|a<rsub|n>=<frac|1|<sqrt|5>><around*|(|<around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>-<around*|(|<frac|1-<sqrt|5>|2>|)><rsup|n+1>|)>>>|<row|<cell|\<varphi\>=<around*|(|<frac|1+<sqrt|5>|2>|)>\<approx\>1.618>>|<row|<cell|p=<around*|(|<frac|1-<sqrt|5>|2>|)>\<approx\>0.618>>>>>
+    </equation*>
+
+    which is very explicat but still not so good for computing
+    <math|a<rsub|1000>> on the nose.
+
+    one has from above that
+
+    <\equation*>
+      a<rsub|n>\<approx\><frac|1|<sqrt|5>><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>
+    </equation*>
+
+    (and in fact, <math|a<rsub|n>> is the near nearest integer to
+    <math|<frac|1|<sqrt|5>><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>>
+    <math|>)
+
+    This tell us a lot about its growth
+
+    e.g. its number of base 10 digits is <math|log<rsub|10><around*|(|a<rsub|n>|)>=<around*|(|n+1|)>log<rsub|10><around*|(|<frac|1+<sqrt|5>|2>|)>+log<rsub|10><around*|(|<frac|1|<sqrt|5>>|)>>
+
+    <math|log<rsub|10><around*|(|<frac|1+<sqrt|5>|2>|)>\<approx\>0.20899>
+
+    <item*|Answer5>Generating function for
+    (<math|a<rsub|0>,a<rsub|1>,a<rsub|2>,\<ldots\>>)
+
+    <\math>
+      A<around*|(|x|)>:=a<rsub|0>+a<rsub|1>x+a<rsub|2>x<rsup|2>+a<rsub|3>x<rsup|3>+\<cdots\>
+
+      =1+x+2x<rsup|2>+3x<rsup|3>+5x<rsup|4>+\<cdots\>
+
+      =<big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>
+    </math>
+
+    as an element of <math|\<complement\><around*|[|<around*|\||x|\|>|]>>the
+    ringing of formal power series in x with C coefficiednts.
+
+    Perhaps not clear yet they why we would even consider
+    <math|A<around*|(|x|)>>, but let's find a simple formula for it rnow and
+    derive evertything else from it!
+
+    \PSlow way\Q
+
+    Then recurrence <math|a<rsub|n>=a<rsub|n-1>+a<rsub|n-2>> for
+    <math|n\<geqslant\>2>, <math|a<rsub|0>=a<rsub|1>=1>
+
+    given <math|<big|sum><rsub|n\<geqslant\>2>a<rsub|n>x<rsup|n>=<big|sum><rsub|n\<geqslant\>2>a<rsub|n-1>x<rsup|n>+<big|sum><rsub|n\<geqslant\>2>a<rsub|n-2>x<rsup|n>=x<big|sum><rsub|n\<geqslant\>2>a<rsub|n-1>x<rsup|n-1>+x<rsup|2><big|sum><rsub|n\<geqslant\>2>a<rsub|n-2>x<rsup|n-2>=x<big|sum><rsub|m\<geqslant\>1>a<rsub|m>x<rsup|m>+x<rsup|2><big|sum><rsub|m\<geqslant\>0>a<rsub|m>x<rsup|m>>
+
+    <math|A<around*|(|x|)>-a<rsub|0>x<rsup|0>-a<rsub|1>x=x<around*|(|A<around*|(|x|)>-a<rsub|0>x<rsup|0>|)>+x<rsup|2>A<around*|(|x|)>=x<around*|(|A<around*|(|x|)>-1|)>+x<rsup|2>A<around*|(|x|)>>
+
+    <math|\<Longrightarrow\>A<around*|(|x|)>=<frac|1|1-x-x<rsup|2>>>
+
+    What is the good is this? Pelenty! It depends on how we try to extract or
+    estimate coefficients
+
+    (a) <math|A<around*|(|x|)>=<frac|1|1-<around*|(|x+x<rsup|2>|)>>=1+<around*|(|x+x<rsup|2>|)>+<around*|(|x+x<rsup|2>|)><rsup|2>+<around*|(|x+x<rsup|2>|)><rsup|3>+\<cdots\>>
+
+    <\math>
+      <big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>=<big|sum><rsub|d\<geqslant\>0><around*|(|x+x<rsup|2>|)><rsup|d>=<big|sum><rsub|d\<geqslant\>0><around*|(|<big|sum><rsup|d><rsub|k=0><around*|(|<rsup|d><rsub|k>|)>|)><around*|(|x<rsup|2>|)><rsup|k>x<rsup|d-k>=<rsub|n=d+k,d=n-k><big|sum><rsub|n\<geqslant\>0>x<rsup|n><around*|(|<big|sum><rsup|<around*|[|n/2|]>><rsub|k=0><around*|(|<rsup|n-k><rsub|k>|)>|)>
+    </math>
+
+    \;
+
+    (b)\ 
+
+    <\equation*>
+      A<around*|(|x|)>=<frac|1|1-x-x<rsup|2>>=<frac|<frac|1|<sqrt|5>><around*|(|<frac|1+<sqrt|5>|2>|)>|1-<frac|1+<sqrt|5>|2>x>+<frac|-<frac|1|<sqrt|5>><around*|(|<frac|1-<sqrt|5>|2>|)>|1-<frac|1-<sqrt|5>|2>x>=<frac|1|<sqrt|5>><big|sum><rsub|n\<geqslant\>0><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>x<rsup|n>-<frac|1|<sqrt|5>><big|sum><rsub|n\<geqslant\>0><around*|(|<frac|1-<sqrt|5>|2>|)><rsup|n+1>x<rsup|n>
+    </equation*>
+
+    Thus <math|a<rsub|n>=\<cdots\>=.>
+
+    (c) The a symptatic <math|a<rsub|n>\<approx\><frac|1|<sqrt|5>><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>>
+    was controled by <math|the reciprocal> <math|\<gamma\>> of the pde
+    <math|\<gamma\><rsub|1>> of <math|A<around*|(|x|)>=<frac|1|1-x-x<rsup|2>>
+    > nearest the origism in <math|\<bbb-C\>> (Walf $2.4)
+
+    The fast way is via Polyga's \Ppicture-writing\Q
+
+    <\equation*>
+      <frac|1|1-<around*|(|Vertical<around*|(|A|)>+Horitial<around*|(|B|)>|)>>=1+<around*|(|Vertical+Horital|)><rsup|2>+<around*|(|Vertical+Horital|)><rsup|2>+<around*|(|Vertical+Horital|)><rsup|3>+\<cdots\>=
+    </equation*>
+
+    <math|<around*|(|Vertical+Horital|)><rsup|2><around*|(|Vertical+Horital|)>=A
+    A+BA+A B+B B>
+
+    <\equation*>
+      A<around*|(|x|)>=<big|sum><rsub|n\<geqslant\>0><around*|(|x+x<rsup|2>|)><rsup|n>=1+<around*|(|x+x<rsup|2>|)>+<around*|(|x+x<rsup|2>|)><rsup|2>+\<cdots\>=<frac|1|1-<around*|(|x+x<rsup|2>|)>>
+    </equation*>
+
+    The generating function can often be refined to keep track of more
+    statistics, e.g, what if we want to compute
+    <math|a<rsub|m,n>=#<around*|{|tilings<space|1em>of<space|1em>2\<times\>n<space|1em>rectangle
+    be dominas with m vertial domines|}>>
+
+    we'll see how to write down <math|<big|sum><rsub|n,m\<gtr\>0>a<rsub|m,n>x<rsup|n>V<rsup|m>=<frac|1|1-V
+    x-x<rsup|2>>>
+
+    this let us find out he of the experted number of verical domaino in a
+    large , which should be <math|<big|sum><rsub|m>a<rsub|m,m>m> , or the
+    fraction of <math|n> tilles that are vertical.\ 
+
+    <\equation*>
+      <frac|<big|sum><rsub|m>a<rsub|m,n>m|n a<rsub|n>>
+    </equation*>
+
+    <\equation*>
+      <big|sum><rsub|x\<geqslant\>0><around*|(|<big|sum><rsub|m\<geqslant\>0>a<rsub|m
+      n>m|)>x<rsup|n>=<tabular|<tformat|<table|<row|<cell|<around*|[|<frac|\<partial\>|\<partial\>V><big|sum><rsub|m,n\<geqslant\>0>a<rsub|m
+      n>x<rsup|n>v<rsup|m>|]><rsub|v=1>>>|<row|<cell|=<around*|[|<frac|\<partial\>|\<partial\>V><frac|1|1-V
+      x-x<rsup|2>>|]><rsub|v=1>>>|<row|<cell|=<around*|[|<frac|x|<around*|(|1-V
+      x-x<rsup|2>|)>>|]><rsub|v=1>>>|<row|<cell|=<frac|x|<around*|(|1-x-x<rsup|2>|)><rsup|2>>>>>>>
+    </equation*>
+
+    using partial functions on this, one can
+    show<math|<big|sum><rsub|m\<geqslant\>0>a<rsub|m
+    n>m\<approx\><frac|n|5><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1><rsub|>\<approx\><frac|1|<sqrt|5>>n
+    a<rsub|n>>
+
+    Thus the expectation <math|\<approx\><frac|<sqrt|n>|5>>. So out of the n
+    tiles, expect rougly <math|<frac|1|<sqrt|5>>>,\ 
+
+    Picture writing
+
+    In fact <math|A<around*|(|x,v|)>\<assign\><big|sum><rsub|n,m\<geqslant\>0>a<rsub|m
+    n>x<rsup|n>v<rsup|m><rsup|>=<around*|[|<frac|1|1-<around*|(|A+B|)>>|]>>,
+    where <math|A=v x<space|1em><around*|(|<rsup|. .><rsub|.
+    .>|)>,B=x<rsup|2>>(:)
+
+    <\equation*>
+      =1+<around*|(|A+B|)>+<around*|(|A+B|)><rsup|2>+<around*|(|A+B|)><rsup|3>+\<cdots\>+
+    </equation*>
+  </description>
+
+  The ringe of formal pwoer series <math|R<around*|[|<around*|[|x|]>|]>>,
+  where <math|R=\<bbb-C\> or R or \<bbb-Q\> or \<bbb-C\><around*|[|v|]> or
+  \<bbb-F\><rsub|q> or any commultative<space|1em>ring with 1>.
+
+  Def <math|\<bbb-R\><around*|[|<around*|[|x|]>|]>=<around*|{||}>=<big|sum><rsub|m\<geqslant\>0>a<rsub|n>x<rsup|n>>
+  is a<space|2em>and mulitpliction <math|x> via convolution
+
+  <\equation*>
+    C<around*|(|x|)>=A<around*|(|x|)>B<around*|(|x|)>=<big|sum><rsub|n=0><rsup|\<infty\>>C<rsub|n>\<lambda\><rsup|n>
+  </equation*>
+
+  with\ 
+
+  <\equation*>
+    c<rsub|n>=<big|sum><rsup|n><rsub|i=0>a<rsub|i>b<rsub|n-i><rsub|>
+  </equation*>
+
+  <math|C<around*|(|x|)>=a<rsub|0>b<rsub|0>+<around*|(|a<rsub|1>b<rsub|0>+a<rsub|0>b<rsub|1>|)>x+<around*|(|a<rsub|0>b<rsub|2>|)>>
+
+  Prop\ 
+
+  <\equation*>
+    A<around*|(|x|)>=<big|sum><rsub|n=0><rsup|\<infty\>>x<rsup|n>\<in\>R<around*|[|<around*|[|x|]>|]>
+    is a unit
+  </equation*>
+
+  i.e <math|\<exists\>B<around*|(|x|)> with
+  1=A<around*|(|x|)>B<around*|(|x|)>>
+
+  <math|\<Leftrightarrow\>a<rsub|0>> is a unit of <math|R>, i.e
+  <math|\<exists\>b<rsub|0>\<in\>R> with <math|1=a<rsub|0>b<rsub|0>>
+
+  <\equation*>
+    A<around*|(|x|)><around*|(|x-x-x<rsup|2>|)>=1<space|1em>\<Rightarrow\>A<around*|(|x|)>=<frac|1|1-x-x<rsup|2>>
+    exists in \<bbb-C\><around*|[|<around*|[|x|]>|]>
+  </equation*>
 
   <\math>
-    a<rsub|n>=a<rsub|n-1>+a<rsub|n-2><space|1em>for<space|1em> n\<geqslant\>2
+    <\proof>
+      1=A x B<around*|(|x|)>=a<rsub|0>b<rsub|0>+<around*|(|a<rsub|1>b0+a<rsub|0>b<rsub|1>|)>x<rsup|1>+<around*|(|a<rsub|2>b<rsub|0>+a<rsub|1>b<rsub|1>+a<rsub|10>b<rsub|2>|)>x<rsup|2>+\<cdots\>+
+    </proof>
 
-    a<rsub|0>=a<rsub|1>=1<space|1em>for n\<leqslant\>1
+    \<Leftrightarrow\>a<rsub|0>b<rsub|0>=1,i.e. b<rsub|0>=a<rsub|n><rsup|-1>
+    in R
+
+    and a<rsub|0>b<rsub|1>+a<rsub|1>b<rsub|1>=0,means
+    b<rsub|1>=-<frac|a<rsub|1>b<rsub|0>|a<rsub|0>>\ 
+
+    <around*|(|a<rsub|2>b<rsub|0>+a<rsub|1>b<rsub|1>+a<rsub|10>b<rsub|2>=0|)>,means<space|1em>b<rsub|2>=-<frac|a<rsub|2>b<rsub|1>+a<rsub|2>b<rsub|0>|a<rsub|n>>
+
+    \ 
   </math>
 
-  Compare with Fibonacci Recurrence:
+  We say that a sequence A0 (x), A 1 (x), . . . of formal power series
+  converges\ 
 
-  <\math>
-    F<rsub|n>=F<rsub|n-1>+F<rsub|n-2> for n\<geqslant\>2
+  i.e. <math|A<around*|(|x|)>> <math|A<rsub|f><around*|(|x|)> >exists, if
+  <math|V n\<geqslant\>0>, the coefficnt of <math|x<rsup|0>> in
+  <math|A<rsub|j><around*|(|x|)>> stab for <math|j\<geqslant\>0>. <math|V>
 
-    F<rsub|0>=0,F<rsub|1>=1
-  </math>
+  <\equation*>
+    A<around*|(|x|)>=<frac|1|1-x-x<rsup|2>>=1+<around*|(|x+x<rsup|2>|)>+<around*|(|x+x<rsup|2>|)><rsup|2>+<around*|(|x+x<rsup|2>|)><rsup|3>+\<cdots\>
+  </equation*>
 
-  <small-table|<tabular|<tformat|<table|<row|<cell|<math|n>>|<cell|<math|a<rsub|n>>>|<cell|<math|F<rsub|n>>>>|<row|<cell|0>|<cell|1>|<cell|0>>|<row|<cell|1>|<cell|1>|<cell|1>>|<row|<cell|2>|<cell|2>|<cell|1>>|<row|<cell|3>|<cell|3>|<cell|2>>|<row|<cell|4>|<cell|5>|<cell|3>>|<row|<cell|5>|<cell|8>|<cell|5>>|<row|<cell|6>|<cell|13>|<cell|8>>>>>|>
+  Converges in <math|\<bbb-C\><around*|[|<around*|[|x|]>|]>>]
 
-  It will take a while to compute <math|a<rsub|1000>> this way, and we don't
-  have too much sense of its order of magnitude.
+  e.g. <math|<around*|[|x<rsup|2>|]>A<around*|(|x|)>=<around*|[|x<rsup|2>|]>A<rsub|2><around*|(|x|)>=<around*|[|x<rsup|2>|]>A<rsub|4><around*|(|x|)>=\<cdots\>=a<rsub|3>=3>
 
-  Answer2:
+  e.g
 
-  Note that <math|a<rsub|n>=#<around*|{|sequence of 1<rprime|'>s and
-  2<rprime|'>s totalling to n|}>>
+  <\equation*>
+    e<rsup|x+1>=1+<frac|x+1|1>+<frac|<around*|(|x+1|)><rsup|2>|2>+<frac|<around*|(|x+1|)><rsup|3>|3>+\<cdots\>+
+  </equation*>
 
-  <math|n=4> <math|\<Rightarrow\>> 1+1+1+1, 1+1+2, 1+2+1,2+1+1,2+2
+  does not\ 
 
-  So <math|a<rsub|n>=<big|sum><rsup|<around*|[|n/2|]>><rsub|k=0>#<around*|{|sequence
-  of k 2<rprime|'>s and n-2k 1<rprime|'>s|}>=<big|sum><rsup|<around*|[|n/2|]>><rsub|k=0><around*|(|<tabular|<tformat|<cwith|2|2|1|1|cell-halign|c>|<table|<row|<cell|<around*|(|n-2k|)>+k>>|<row|<cell|k>>>>>|)>=<big|sum><rsup|<around*|[|n/2|]>><rsub|k=0><around*|(|<tabular|<tformat|<cwith|2|2|1|1|cell-halign|c>|<table|<row|<cell|n-k>>|<row|<cell|k>>>>>|)>>
+  <\equation*>
+    <around*|[|x|]>A<rsub|j>=1+<frac|1|1!>+<frac|1|2!>+<frac|1|3!>+\<cdots\>+<frac|1|j!>
+  </equation*>
 
-  eg: <math|a<rsub|4>=<around*|(|<rsup|4><rsub|0>|)>+<around*|(|<rsup|3><rsub|1>|)>+<around*|(|<rsup|2><rsub|2>|)>=1+3+1=5>
+  <\equation*>
+    e<rsup|x>=1+<frac|x|1>+<frac|x<rsup|2>|2>+<frac|x<rsup|3>|3>+\<cdots\>+
+  </equation*>
+
+  is converges
+
+  Alternative, <math|<around*|{||\<nobracket\>>A<rsub|j><around*|(|x|}>> con
+
+  <\equation*>
+    min deg<around*|(|A<rsub|j><around*|(|x|)>-A<rsub|j+1><around*|(|x|)>|)>=\<infty\>
+  </equation*>
+
+  where min deg<math|A<around*|(|x|)>=<big|sum><rsub|n=0><rsup|\<infty\>>a<rsub|n>x<rsup|n>=smallest
+  d with a<rsub|d>\<neq\>0>
+
+  e.g. <math|A<rsub|j><around*|(|x|)>-A<rsub|j-1><around*|(|x|)>=<around*|(|x+x<rsup|2>|)><rsup|j>>,
+  having mindeg<math|=j\<rightarrow\>\<infty\>>
+
+  Cor <math|<big|sum><rsub|j=0><rsup|\<infty\>>B<rsub|j><around*|(|x|)>-B<rsub|0><around*|(|x|)>+B<rsub|1><around*|(|x|)>+\<cdots\>+>
+
+  converges in <math|R<around*|[|<around*|\||x|\|>|]>\<Leftrightarrow\>B<rsub|j><around*|(|x|)>\<longrightarrow\>\<infty\>>
+
+  Cor Infinite product of the form\ 
+
+  <\equation*>
+    \<bbb-I\><rsup|\<infty\>><rsub|j=1><around*|(|1+B<rsub|j>*<around*|(|x|)>|)>
+    with min deg B<rsub|j>\<geqslant\>1 Vj
+  </equation*>
+
+  converge in <math|R<around*|[|<around*|\||x|\|>|]>\<Leftrightarrow\>lim<rsub|j<rsub|-\<gtr\>\<infty\>>>min
+  deg B<rsub|j><around*|(|x|)>\<longrightarrow\>\<infty\>>
+
+  <\proof>
+    <\math>
+      A<rsub|j><around*|(|x|)>=<around*|(|1+B<rsub|1>|)><around*|(|1+B<rsup|2>|)>+\<cdots\>+<around*|(|1+B<rsub|j>|)>
+
+      has A<rsub|j>-A<rsub|j-1>=<rsup|2>B<rsub|j><around*|(|1+B<rsub|1>|)>\<ldots\><around*|(|1+B<rsub|j-1>|)>=B<rsub|j><around*|(|1+\<cdots\>|)>
+      his mindeg=min deg B<rsub|j>
+    </math>
+  </proof>
+
+  <\example>
+    (Staley 1.8) Partition generating
+
+    Def A pation <math|\<lambda\>=<around*|(|\<lambda\><rsub|1>,\<lambda\><rsub|2>,\<lambda\><rsub|3>\<ldots\>|)>>
+    of <math|n> is a weakly decresing sequence,
+    <math|\<lambda\><rsub|1>\<geqslant\>\<lambda\><rsub|2>\<geqslant\>\<lambda\><rsub|3>\<geqslant\>\<cdots\>\<geqslant\>0>
+    with , evetally 0 sequence of nonegtive intergers, such that
+    <math|\<lambda\><rsub|1>+\<lambda\><rsub|2>+\<cdots\>=n>. We ant
+    <math|\<lambda\>1-n> and <math|n=<around*|\||\<lambda\>|\|>>.
+
+    e.g. <math|\<lambda\>=<around*|(||)>> It's length
+    <math|l<around*|(|\<lambda\>|)>=#<around*|{|i<around*|\||\<lambda\><rsub|i>\<gtr\>0|\<nobracket\>>|}>=#of
+    nonzero parts \<lambda\><rsub|i>>. Its Ferrers diagram is a left and top
+    justfied arrrange unit squares, with <math|\<lambda\><rsub|i>> in row
+    <math|i> from the top.
+  </example>
+
+  e.g<tabular|<tformat|<table|<row|<cell|>>>>>.
+  <math|\<lambda\>=<around*|(|5,5,3,1|)>\<leftrightarrow\><tabular|<tformat|<cwith|1|1|1|-1|font-series|bold>|<table|<row|<cell|>|<cell|>|<cell|>|<cell|>|<cell|>>|<row|<cell|>|<cell|>|<cell|>|<cell|>|<cell|>>|<row|<cell|>|<cell|>|<cell|>|<cell|>|<cell|>>|<row|<cell|>|<cell|>|<cell|>|<cell|>|<cell|>>>>>>,
+  let <math|p<around*|(|n|)>=#> of partitions
+  <math|\<lambda\><around*|\||-n|\<nobracket\>>>
+
+  \ <tabular|<tformat|<table|<row|<cell|<math|p<around*|(|n|)>>>|<cell|n>>|<row|<cell|7>|<cell|5>>|<row|<cell|5>|<cell|4>>|<row|<cell|3>|<cell|3>>|<row|<cell|2>|<cell|2>>|<row|<cell|1>|<cell|1>>|<row|<cell|1>|<cell|0>>>>>
+
+  <math|\<bbb-Y\>=Young<rprime|'>s lattife poset on all partitions>
+
+  <\enumerate>
+    <item><math|<big|sum><rsub|a\<gtr\>0>p<around*|(|n|)>a<rsup|n>=<big|sum><rsub|all<space|1em>partitions>q<rsup|<around*|\||\<lambda\>|\|>>>
+
+    <math|\<bbb-C\><around*|[|<around*|\||q|\|>|]>=<around*|(|1+|\<nobracket\>>><tabular|<tformat|<table|<row|<cell|.>>>>>+<tabular|<tformat|<table|<row|<cell|.>>|<row|<cell|.>>>>>+<tabular|<tformat|<table|<row|<cell|.>>|<row|<cell|.>>|<row|<cell|.>>>>>+)(1+<tabular|<tformat|<table|<row|<cell|.>>>>>+)<math|=<around*|(|1+q+q<rsup|2>+q<rsup|3>+\<cdots\>+|)><around*|(|1+q<rsup|2>+q<rsup|2<rsup|2>>+\<cdots\>+|)><around*|(|1+q<rsup|3>+q<rsup|3<rsup|2>>+\<ldots\>|)>=<frac|1|1-q><frac|1|1-q<rsup|2>><frac|1|1-q<rsup|3>>=<frac|1|<around*|(|1-q|)><around*|(|1-q<rsup|2>|)><around*|(|1-q<rsup|3>|)>>>
+  </enumerate>
+
+  <\equation*>
+    A<around*|(|V<rsub|1>x|)>=<frac|1|1-v
+    x-x<rsup|2>>=<big|sum><rsub|n-m\<gtr\>0>a<rsub|n,m>v<rsup|m>x<rsup|n>
+  </equation*>
+
+  <\equation*>
+    <frac|x|<around*|(|1-x-x<rsup|2>|)><rsup|2>>=<frac|1|<around*|(|x<rsup|2>+x-1|)><rsup|2>>=<frac|x|<around*|(||)>>
+  </equation*>
+
+  <math|x<rsup|n>> has coefficent
+
+  <\equation*>
+    <big|sum><rsub|n\<geqslant\>0>p<around*|(|n|)>q<rsup|n>=<big|sum><rsub|all<space|1em>partition<space|1em>\<lambda\>>q<rsup|<around*|\||\<lambda\>|\|>>=<around*|(|1+|)>
+  </equation*>
+
+  No closed-form expression for <math|p<around*|(|n|)>> is known
+
+  ass<space|1em><math|log<around*|(|*p<around*|(|n|)>|)>\<sim\>C<sqrt|n>><space|1em><math|n\<rightarrow\>\<infty\>
+  > <math|C=\<pi\><sqrt|<frac|2|3>>>
 
   \;
 
-  Answer3: <math|2<rsup|th>> explicat formula
+  Conjection <math|P<rsub|odd><around*|(|n|)>=q<around*|(|n|)>>, for any
+  <math|n\<geqslant\>0>, Why?
 
-  We'll derive soo that
-
-  <\equation*>
-    <tabular|<tformat|<table|<row|<cell|a<rsub|n>=<frac|1|<sqrt|5>><around*|(|<around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>-<around*|(|<frac|1-<sqrt|5>|2>|)><rsup|n+1>|)>>>|<row|<cell|\<varphi\>=<around*|(|<frac|1+<sqrt|5>|2>|)>\<approx\>1.618>>|<row|<cell|p=<around*|(|<frac|1-<sqrt|5>|2>|)>\<approx\>0.618>>>>>
-  </equation*>
-
-  which is very explicat but still not so good for computing
-  <math|a<rsub|1000>> on the nose.
-
-  one has from above that
+  The gen fcsn will expliain it.\ 
 
   <\equation*>
-    a<rsub|n>\<approx\><frac|1|<sqrt|5>><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>
+    P<rsub|odd><around*|(|x|)>=<around*|(|1+q+q<rsup|2>+\<cdots\>+|)><around*|(|1+q<rsup|3>+q<rsup|6>+\<cdots\>+|)><around*|(|1+q<rsup|5>+q<rsup|10>+\<cdots\>+|)>=<frac|1|<around*|(|1-q|)>><frac|1|<around*|(|1-q<rsup|2>|)>>=<frac|1|\<bbb-I\><rsub|j\<geqslant\>0><around*|(|1-q<rsup|2j+1>|)>>
   </equation*>
 
-  (and in fact, <math|a<rsub|n>> is the near nearest integer to
-  <math|<frac|1|<sqrt|5>><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>>
-  <math|>)
+  In fact,
 
-  This tell us a lot about its growth
+  <\equation*>
+    Q<around*|(|q|)>=<around*|(|1+q<rsup|1>|)><around*|(|1+q<rsup|2>|)><around*|(|1+q<rsup|3>|)>\<ldots\>=<frac|1-q<rsup|2>|1-q><frac|1-q<rsup|2<rsup|2>>|1-q<rsup|2>><frac|1-q<rsup|3<rsup|2>>|1-q<rsup|3>>=<frac|1|<around*|(|1-q|)><around*|(|1-q<rsup|3>|)><around*|(|1-q<rsup|5>|)>\<ldots\>>=P<rsub|o
+    d d><around*|(|2|)>
+  </equation*>
 
-  e.g. its number of base 10 digits is <math|log<rsub|10><around*|(|a<rsub|n>|)>=<around*|(|n+1|)>log<rsub|10><around*|(|<frac|1+<sqrt|5>|2>|)>+log<rsub|10><around*|(|<frac|1|<sqrt|5>>|)>>
+  Let's justify it differently, let\ 
 
-  <math|log<rsub|10><around*|(|<frac|1+<sqrt|5>|2>|)>\<approx\>0.20899>
+  <\equation*>
+    \<in\>R<around*|(|q|)>\<assign\><around*|(|1-q|)><around*|(|1-q<rsup|3>|)><around*|(|1-q<rsup|5>|)>\<ldots\>=<frac|1|P<rsub|o
+    dd<around*|(|q|)>>>in \<bbb-C\><around*|[|<around*|\||q|\|>|]>
+  </equation*>
+
+  It suffices to show <math|1=Q<around*|(|q|)>R<around*|(|q|)>> Since
+  multiplication inverse are unique. <math|Q<around*|(|q|)>=<around*|(|<around*|(|1+q|)><around*|(|1+q<rsup|2>|)><around*|(|1+q<rsup|3>|)>\<ldots\>|)><around*|(|<around*|(|1-q|)><around*|(|1-q<rsup|2>|)><around*|(|1-q<rsup|3>|)>\<ldots\>|)>=<around*|(|1+q<rsup|1>|)><around*|(|1-q|)><around*|(|<around*|(|1+q<rsup|2>|)><around*|(|1+q<rsup|3>|)>\<ldots\>|)><around*|(|<around*|(|1-q<rsup|3>|)><around*|(|1-q<rsup|5>|)>\<ldots\>|)>=<around*|(|:w|)>>
+
+  Bijective proof: <math|P<rsub|od d><around*|(|n|)>=q<around*|(|n|)>>
+  Standly 64
+
+  Given <math|\<lambda\>> partition with odd parts <math|2j-1> of
+  mulitiplicity <math|r<rsub|j>=2<rsup|i<rsub|1>>+2<rsup|i<rsub|2>>+\<ldots\>>
+  in its binary expansion. and create e.g.
+  <math|\<lambda\>=<around*|(|9<rsup|<around*|(|5|)>>,5<rsup|<around*|(|12|)>>,3<rsup|<around*|(|2|)>>,1<rsup|<around*|(|3|)>>|)>=<around*|(|9<rsup|<around*|(|2<rsup|1>+2<rsup|2>|)>>|)>>
+  <math|>
+
+  <\equation*>
+    \<mu\>=<around*|(|q2<rsup|0>,q2<rsup|2>,5|)>
+  </equation*>
+
+  Reversible
+
+  <\equation*>
+    \<mu\>=<around*|(|20,10,7,6,4|)>=<around*|(|5\<cdot\>2<rsup|2>,5\<cdot\>2<rsup|1>,7\<cdot\>2<rsup|0>,3\<cdot\>2<rsup|1>,1*\<cdot\>2<rsup|2>|)>
+    \<Updownarrow\>\<lambda\>=<around*|(|5<rsup|<around*|(|2<rsup|2>+2<rsup|1>|)>>,7<rsup|<around*|(|2|)>>|)>
+  </equation*>
 
   \;
 
-  Answre5: Generating function fro (<math|a<rsub|0>,a<rsub|1>,a<rsub|2>,\<ldots\>>)
+  <subsection|Poset>
 
-  <\math>
-    A<around*|(|x|)>:=a<rsub|0>+a<rsub|1>x+a<rsub|2>x<rsup|2>+a<rsub|3>x<rsup|3>+\<cdots\>
+  A <with|font-series|bold|partially ordered set> or
+  <with|font-series|bold|poset> (<math|P,\<leq\>>) is a set <math|P> together
+  with a binary relation <math|\<leq\>>, called a
+  <with|font-shape|italic|partial order>, such that
 
-    =1+x+2x<rsup|2>+3x<rsup|3>+5x<rsup|4>+\<cdots\>
+  <\itemize-dot>
+    <item>For all <math|p\<in\>P>, we have <math|p\<leq\>p>.
 
-    =<big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>
-  </math>
+    <item>For all <math|p,q\<in\>P>, if <math|p\<leq\>q> and <math|q\<leq\>p>
+    then <math|p=q>
 
-  as an element of <math|\<complement\><around*|[|<around*|\||x|\|>|]>>the
-  ringing of formal power series in x with C coefficiednts.
+    <item>For all <math|p,q,r\<in\>P>, if <math|p\<leq\>q> and
+    <math|q\<leq\>r> then <math|p\<leq\>r>
+  </itemize-dot>
 
-  Perhaps not clear yet they why we would even consider
-  <math|A<around*|(|x|)>>, but let's find a simple formula for it rnow and
-  derive evertything else from it!
+  We say that <math|p\<less\>q> if <math|p\<leqslant\>q> and
+  <math|p\<neq\>q>. We say that <math|p> and <math|q> are
+  <with|font-series|bold|comparable> if <math|p\<less\>q> or
+  <math|p\<gtr\>q>, and they are <with|font-series|bold|imcomparable>
+  otherwise. We say that q <with|font-series|bold|covers> <math|p> if
+  <math|q\<gtr\>p> and there is no <math|r\<in\>P> such that
+  <math|q\<gtr\>r\<gtr\>p>. When <math|q> covers <math|p> we write
+  <math|q\<gtr\>p>.
 
-  \PSlow way\Q
+  <\example>
+    Many sets in combinatorics come with a natural partial order, and often
+    the resulting poset structure is very useful for enumerative purpose.
+    Some of the most imporant example are the following:
 
-  Then recurrence <math|a<rsub|n>=a<rsub|n-1>+a<rsub|n-2>> for
-  <math|n\<geqslant\>2>, <math|a<rsub|0>=a<rsub|1>=1>
+    <\enumerate>
+      <item>(Chian) The <with|font-shape|italic|poset>
+      <math|<with|font-series|bold|n>=<around*|{|1,2,\<ldots\>,n|}>> with the
+      usual total order.(n\<gtr\>=1)
 
-  given <math|<big|sum><rsub|n\<geqslant\>2>a<rsub|n>x<rsup|n>=<big|sum><rsub|n\<geqslant\>2>a<rsub|n-1>x<rsup|n>+<big|sum><rsub|n\<geqslant\>2>a<rsub|n-2>x<rsup|n>=x<big|sum><rsub|n\<geqslant\>2>a<rsub|n-1>x<rsup|n-1>+x<rsup|2><big|sum><rsub|n\<geqslant\>2>a<rsub|n-2>x<rsup|n-2>=x<big|sum><rsub|m\<geqslant\>1>a<rsub|m>x<rsup|m>+x<rsup|2><big|sum><rsub|m\<geqslant\>0>a<rsub|m>x<rsup|m>>
+      <item>(Boolean lattice) The <with|font-shape|italic|poset>
+      <math|2<rsup|A>> of subsets of a set <math|A>, where <math|S\<leq\>T>
+      if <math|S\<subseteq\>T>.
 
-  <math|A<around*|(|x|)>-a<rsub|0>x<rsup|0>-a<rsub|1>x=x<around*|(|A<around*|(|x|)>-a<rsub|0>x<rsup|0>|)>+x<rsup|2>A<around*|(|x|)>=x<around*|(|A<around*|(|x|)>-1|)>+x<rsup|2>A<around*|(|x|)>>
+      <item>(Divisor lattice) The <with|font-shape|italic|poset>
+      <math|D<rsub|n>> of divisors of <math|n>, where <math|c\<leq\>d> if
+      <math|c> divides d.(<math|n\<geqslant\>1>)
 
-  <math|\<Longrightarrow\>A<around*|(|x|)>=<frac|1|1-x-x<rsup|2>>>
+      <item>(Young's lattice) The <with|font-shape|italic|poset> <math|Y> of
+      integer partitions, where <math|\<lambda\>\<leq\>\<mu\>> if
+      <math|\<lambda\><rsub|i>\<leqslant\>\<mu\><rsub|i>> for all <math|i>.
 
-  What is the good is this? Pelenty! It depends on how we try to extract or
-  estimate coefficients
+      <item>(Partition lattice) The <with|font-shape|italic|poset>
+      <math|<big|prod><rsub|n>>of set partitions of <math|<around*|[|n|]>>,
+      where <math|\<pi\>\<leq\>p> if <math|\<pi\>> refines <math|\<rho\>>;
+      that is, if every block of <math|\<rho\>> is a union of blocks of
+      <math|\<pi\>>.(<math|n\<geqslant\>1>)
 
-  (a) <math|A<around*|(|x|)>=<frac|1|1-<around*|(|x+x<rsup|2>|)>>=1+<around*|(|x+x<rsup|2>|)>+<around*|(|x+x<rsup|2>|)><rsup|2>+<around*|(|x+x<rsup|2>|)><rsup|3>+\<cdots\>>
+      <item>(Non-crossing partition lattice) The
+      <with|font-shape|italic|subposet> <math|N C<rsub|n>> of
+      <math|<big|prod><rsub|n>>consisting of the non-crossing set partitions
+      of <math|<around*|[|n|]>>, where there are no elements
+      <math|a\<less\>b\<less\>c\<less\>d> such that <math|a,c> are together
+      in one block and <math|b,d> are together in a different
+      block.(<math|n\<geqslant\>1>)
+    </enumerate>
+  </example>
 
-  <\math>
-    <big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>=<big|sum><rsub|d\<geqslant\>0><around*|(|x+x<rsup|2>|)><rsup|d>=<big|sum><rsub|d\<geqslant\>0><around*|(|<big|sum><rsup|d><rsub|k=0><around*|(|<rsup|d><rsub|k>|)>|)><around*|(|x<rsup|2>|)><rsup|k>x<rsup|d-k>=<rsub|n=d+k,d=n-k><big|sum><rsub|n\<geqslant\>0>x<rsup|n><around*|(|<big|sum><rsup|<around*|[|n/2|]>><rsub|k=0><around*|(|<rsup|n-k><rsub|k>|)>|)>
-  </math>
+  A peek in to Posets(Stanly ch3)
+
+  Def: A poset <math|<around*|(|P,\<leqslant\>p|)>>, is a set of <math|P>
+  with a binary relation <math|x\<leqslant\><rsub|p>y> statisfying\ 
+
+  <\equation*>
+    x\<leqslant\><rsub|p>x<around*|(|refletion|)>,
+  </equation*>
+
+  <\equation*>
+    x\<leqslant\><rsub|p>y
+  </equation*>
+
+  Example:
+
+  ([n]:={1,2,..,n})
+
+  <\equation*>
+    Y=yong<rprime|'>s latice in all partition \<lambda\>
+  </equation*>
+
+  Example 3:
+
+  YF:=Yong - Fibonacci lattioce(See Stanly, 3.21example #4)\ 
+
+  For <math|S<rsub|a>> a set, <math|<around*|(|2<rsup|s>,\<leqslant\>|)>=Boolean
+  algebra<around*|{|all subsets of S|}> with >S\<less\>=T, if
+  <math|S\<leqslant\>T>. When <math|S=<around*|[|n|]>=<around*|{|1,2,\<ldots\>,n|}>>
+  e.g. <math|B<rsub|1>=<around*|{|1|}>-\<phi\>>
 
   \;
 
-  (b)\ 
+  When <math|P><space|1em>is locally finite (or even locally chanins finite)
+  i.e. all interal <math|<around*|[|x,y|]>> are chain-finite). then
+  <math|\<leqslant\>p> is the transtive closure of the covering relation
+  <math|x\<less\><rsub|p>y>.define by <math|x\<leqslant\><rsub|p>y> and
+  <math|\<exists\>/> <math|\<delta\>> in <math|P> with
+  <math|x\<leqslant\><rsub|p>>
+
+  The <with|font-series|bold|Hasse diagram> of a finite poset <math|P> is
+  obtained by drawing a dot for each element of <math|P> and an edge going
+  down from <math|p> to <math|q> if <math|p> covers <math|q>.\ 
+
+  Def: If <math|P> is finite(resp is it is locally chain-finite and has a
+  bottom element <math|o<rsup|\<wedge\>>>), sat <math|P> is graded if every
+  maximal chain has same size\ 
+
+  Back to formal power series for a bit, we'll have use for those elements of
+  <math|\<bbb-C\><around*|[|<around*|\||x|\|>|]>>
+
+  Def <math|e<rsup|x>=<big|sum><rsub|n\<geqslant\>0><frac|x<rsup|n>|n!>>=
+
+  <\math>
+    log<around*|(|1+x|)>\<assign\><big|sum><rsub|n\<geqslant\>1><around*|(|-1|)><rsup|n-1><frac|x<rsup|n>|n>=x-<frac|x<rsup|2>|2>+<frac|x<rsup|3>|3>-<frac|x<rsup|4>|4>+\<cdots\>+
+  </math>
+
+  <math|\<forall\>\<mathlambda\>\<in\>\<bbb-C\>,<around*|(|1+x|)><rsup|\<lambda\>>\<assign\><big|sum><rsub|k\<geqslant\>0><around*|(|<tabular|<tformat|<table|<row|<cell|l>>|<row|<cell|k>>>>>|)>x<rsup|k>>
+
+  Thet do have all the usual propartres you expcet
+
+  <math|Ex>:
+
+  <\enumerate>
+    <item><math|<around*|(|1+x|)><rsup|\<lambda\>><around*|(|1+x|)><rsup|\<mu\>>=<around*|(|1+x|)><rsup|\<mu\>+\<lambda\>>
+    >in <math|\<bbb-C\><around*|{|<around*|[|x|]>|}>>
+
+    <item><math|e<rsup|log<around*|(|1+\<lambda\>|)>>=1+\<lambda\>>
+
+    <item><math|e<rsup|x>e<rsup|y>=e<rsup|x+y>>, etc<text-dots>
+  </enumerate>
+
+  Ex: <math|e<rsup|log<around*|(|1+x|)>>\<assign\>1+log<around*|(|1+x|)>+<frac|<around*|(|log<around*|(|1+x|)>|)><rsup|2>|2!>+\<cdots\>+=1+<around*|(|x-<frac|x<rsup|2>|2>+<frac|x<rsup|3>|3>-\<cdots\>|)>+<frac||>>
+
+  Inf fact, Prop If <math|A<around*|(|x|)>>, <math|B<around*|(|x|)>> and
+  <math|b<rsub|0>=0>, where <math|A<around*|(|x|)>=<big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>>,
+  <math|B<around*|(|x|)>=<big|sum><rsub|n\<geqslant\>0>b<rsub|n>x<rsup|n>>,
+  then <math|A<around*|(|B<around*|(|x|)>|)>\<assign\><big|sum><rsub|n\<geqslant\>0>a<rsub|n>B<around*|(|x|)><rsup|n>>
+  converges in <math|\<bbb-C\><around*|[|<around*|\||x|\|>|]>>
+
+  How to justify <math|<around*|(|1|)><around*|(|2|)><around*|(|3|)>
+  etc\<ldots\>?>
+
+  (2) is laborous without a chert from caluclus(Talylor scney) and complex
+  analysis.
+
+  Then If <math|f<around*|(|\<delta\>2|)>=<big|sum><rsub|n\<geqslant\>0>a<rsub|n
+  >\<delta\><rsup|n>> is analytif \ 
+
+  (4) <math|<around*|(|1+x|)><rsup|n>=<big|sum><rsub|k\<geqslant\>0><around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|k>>>>>|)>n<rsup|k>>
+  , for <math|n\<leqslant\><around*|\||\<lambda\>|\|>> but also
 
   <\equation*>
-    A<around*|(|x|)>=<frac|1|1-x-x<rsup|2>>=<frac|<frac|1|<sqrt|5>><around*|(|<frac|1+<sqrt|5>|2>|)>|1-<frac|1+<sqrt|5>|2>x>+<frac|-<frac|1|<sqrt|5>><around*|(|<frac|1-<sqrt|5>|2>|)>|1-<frac|1-<sqrt|5>|2>x>=<frac|1|<sqrt|5>><big|sum><rsub|n\<geqslant\>0><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>x<rsup|n>-<frac|1|<sqrt|5>><big|sum><rsub|n\<geqslant\>0><around*|(|<frac|1-<sqrt|5>|2>|)><rsup|n+1>x<rsup|n>
+    <frac|1|<around*|(|1-x|)><rsup|n>>=<around*|(|1+<around*|(|-x|)>|)><rsup|-n>=<big|sum><rsub|k\<geqslant\>0><around*|(|<tabular|<tformat|<table|<row|<cell|-n>>|<row|<cell|k>>>>>|)><around*|(|-x|)><rsup|k>=<big|sum><rsub|K\<geqslant\>0><around*|(|<around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|k>>>>>|)>|)>x<rsup|k>
   </equation*>
-
-  Thus <math|a<rsub|n>=\<cdots\>=.>
-
-  (c) The a symptatic <math|a<rsub|n>\<approx\><frac|1|<sqrt|5>><around*|(|<frac|1+<sqrt|5>|2>|)><rsup|n+1>>
-  was controled by <math|the reciprocal> <math|\<gamma\>> of the pde
-  <math|\<gamma\><rsub|1>> of <math|A<around*|(|x|)>=<frac|1|1-x-x<rsup|2>> >
-  nearest the origism in <math|\<bbb-C\>> (Walf $2.4)
-
-  The fast way is via Polyga's \Ppicture-writing\Q
-
-  <\equation*>
-    <frac|1|1-<around*|(|Vertical<around*|(|A|)>+Horitial<around*|(|B|)>|)>>=1+<around*|(|Vertical+Horital|)><rsup|2>+<around*|(|Vertical+Horital|)><rsup|2>+<around*|(|Vertical+Horital|)><rsup|3>+\<cdots\>=
-  </equation*>
-
-  <math|<around*|(|Vertical+Horital|)><rsup|2><around*|(|Vertical+Horital|)>=A
-  A+BA+A B+B B>
-
-  <\equation*>
-    A<around*|(|x|)>=<big|sum><rsub|n\<geqslant\>0><around*|(|x+x<rsup|2>|)><rsup|n>=1+<around*|(|x+x<rsup|2>|)>+<around*|(|x+x<rsup|2>|)><rsup|2>+\<cdots\>=<frac|1|1-<around*|(|x+x<rsup|2>|)>>
-  </equation*>
-
-  The generating function can often be refined to keep track of more
-  statistics, e.g, what if we want to compute
-  <math|a<rsub|m-n>=#<around*|{|tilings<space|1em>of<space|1em>2\<times\>n<space|1em>rectangle
-  be dominas with m vertial domines|}>>
 </body>
 
 <initial|<\collection>
@@ -175,6 +593,7 @@
 <\references>
   <\collection>
     <associate|auto-1|<tuple|1|?>>
+    <associate|auto-2|<tuple|1|?>>
   </collection>
 </references>
 
@@ -182,6 +601,11 @@
   <\collection>
     <\associate|table>
       <tuple|normal|<surround|<hidden-binding|<tuple>|1>||>|<pageref|auto-1>>
+    </associate>
+    <\associate|toc>
+      <with|par-left|<quote|1tab>|1<space|2spc>Poset
+      <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>>
+      <no-break><pageref|auto-2>>
     </associate>
   </collection>
 </auxiliary>
