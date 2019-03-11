@@ -22,6 +22,181 @@
 
   \;
 
+  The basic problem of enmerative combinatorics is that of counting the
+  number of elements of a finite set. Usually we are given an infinte
+  collection of finite sets <math|S<rsub|i><rsub|>> where <math|i> ranges
+  over some index set <math|I>(such as the nonegative integers
+  <math|\<bbb-N\>>), and we wish to count the number <math|f<around*|(|i|)>>
+  of elements in each <math|S<rsub|i>> \P<underline|stimultaneously<with|font-shape|italic|>>.\Q(<with|color|green|why
+  must be> ) Immediate philophical difficulties arise. What does it mean to
+  \Pcounte\Q the number of elements of <math|S<rsub|i>>? There is no
+  definitive answer to the question. Only through experience does one develop
+  an idea of what is meant by a \Pdetermination\Q of a counting function
+  <math|f<around*|(|i|)>>. The counting function <math|f<around*|(|i|)>> can
+  be gaven in several standard ways.
+
+  1. The most satisfactory form of <math|f<around*|(|i|)>> is a completely
+  explict closed formula involving only well-known functions, and free from
+  summation symbols. Only in rare cases will such formula exists. As formulas
+  for <math|f<around*|(|i|)>> become more complicated, our willingness to
+  accept them as \Pdeterminations\Q of <math|f<around*|(|i|)>> decrease.
+  Consider the following examples.
+
+  1.1.1 Example. For each <math|n\<in\>\<bbb-N\>>, let
+  <math|f<around*|(|n|)>> be the number of subsets of the set
+  <math|<around*|[|n|]>=<around*|{|1,2,\<ldots\>,n|}>>. Then
+  <math|f<around*|(|n|)>=2<rsup|n>>, and no one will quarrel about being a
+  satisfactory formula for <math|f<around*|(|n|)>>
+
+  1.1.2 Example. Suppose <math|n> mean give their <math|n> hats to a
+  hat-check person. Let <math|f<around*|(|n|)>> be the number of ways that
+  the hats can be given back to the men, each man revceiving one hat, so that
+  no man revceives his own hat. For instance, <math|f<around*|(|1|)>=0,>
+  <math|f<around*|(|2|)>=1>, <math|f<around*|(|3|)>=2>. We will see in
+  Chapter 2(Example 2.2.1) that
+
+  <\equation*>
+    f<around*|(|n|)>=n!<big|sum><rsub|i=0><rsup|n><frac|<around*|(|-1|)><rsup|i>|i!>.
+  </equation*>
+
+  This formula for <math|f<around*|(|n|)>> is not as elegant as the formula
+  in Example 1.1.1, but for lack of a simpler answer we are willing to accept
+  (1.1) as a satisfactory formula. It certainly has the virtue of making it
+  easy (in a sense that can be made precise) to compute the values
+  <math|f<around*|(|n|)>>. Moreover, once the derivatino of (1.1) is
+  understood(using the Principle of Inclusion-Exclusion), every term of (1.1)
+  has an easily understood combinatorial meaning. This enables us to
+  \Punderstand\Q (1.1) intuitively, so our willingness to accept it is
+  enhanced. We also remark that it follows easily from (1.1) that
+  <math|f<around*|(|n|)>> is the nearest integer to <math|n!/e>. This is
+  certainly a simple explict formula, but is has the disadvantage of being
+  \Pnon-combinatiorial\Q; that is. dividing by <math|e> and rounding off to
+  the nearest integer has no direct combinatorial significance.
+
+  1.1.3 Example. There are actually formulas in the literature(\Pnameless
+  here for evermore\Q) for certain counting functions <math|f<around*|(|n|)>>
+  whose evalution requires listing all (or almost all) of the
+  <math|f<around*|(|n|)>> objects being counted! Such a \Pformula\Q is
+  completely worthless.
+
+  2. A recurrence for <math|f<around*|(|i|)>> may be given in terms of
+  prevously calculated <math|f<around*|(|j|)>>'s, thereby giving a simple
+  procedure for calculating <math|f<around*|(|i|)>> for any desired
+  <math|i\<in\>I>. For instance, let <math|f<around*|(|n|)>> be the number of
+  subsets of <math|<around*|[|n|]>> that do not contain two consecutive
+  integers. For example, for <math|n=4> we have the subsets
+  <math|\<emptyset\>,<around*|{|1|}>,<around*|{|2|}>,<around*|{|3|}>,<around*|{|4|}>,<around*|{|1,3|}>,<around*|{|1,4|}>,<around*|{|2,4|}>,>sof
+  <math|f<around*|(|4|)>=8>. It is easily seen that
+  <math|f<around*|(|n|)>=f<around*|(|n-1|)>> for <math|n\<geqslant\>2>. This
+  makes it trivial, for example, to compute <math|f<around*|(|20|)>=17711>.
+  On the other hand, it can be shown(see Setion 4.1 for the underlying
+  theory) that
+
+  <\equation*>
+    f<around*|(|n|)>=<frac|1|<sqrt|5>><around*|(|\<tau\><rsup|n+2>-<wide|\<tau\>|\<bar\>><rsup|n+2>|)>,
+  </equation*>
+
+  where <math|\<tau\>=<frac|1|2><around*|(|*1+<sqrt|5>|)>,<wide|\<tau\>|\<bar\>>=<frac|1|2><around*|(|1-<sqrt|5>|)>>.
+  This is an explict answer, but because it involves irratinal numbers it is
+  a matter of opinion(which may depend on the context) whether it is a better
+  answer than the recurrence <math|f<around*|(|n|)>=f<around*|(|n-1|)>+f<around*|(|n-2|)>>.
+
+  3. An algorithm may be given for computing <math|f<around*|(|i|)>>. This
+  method of dtermining <math|f> subsumes the previous two, as well as method
+  5 below. Any counting function likely to arise in practice can be computed
+  from an algorithm, so the acceptability of this method will depend on the
+  elegance and performance of the algorithm. In general, we would like the
+  time that it takes the algorithm to compute <math|f<around*|(|i|)>> to be
+  \Psubstantially less\Q than <math|f<around*|(|i|)>> itself. Otherwise we
+  are accomplishing little more that a brute force listing of the objects
+  counted by <math|f<around*|(|i|)>>. It would take us too far afield to
+  discuss the profound contributions that computer science has made to the
+  problem of analyzing, constructing, and evaluating algorithms. We will be
+  concered almost exclusively with enumerative problems that admit solutions
+  that are more concrete than an algorithm.
+
+  4. An estimate may be given for <math|f<around*|(|i|)>>. If
+  <math|I=\<bbb-N\>>, this estimate frequently takes the form of an
+  <with|font-shape|italic|asymptotic formula>
+  <math|f<around*|(|n|)>\<sim\>g<around*|(|n|)>>, where
+  <math|g<around*|(|n|)>> is a familiar function.\Q The notation
+  <math|f<around*|(|n|)>\<sim\>g<around*|(|n|)>> means that
+  <math|lim<rsub|n\<longrightarrow\>\<infty\>>f<around*|(|n|)>/g<around*|(|n|)>=1>.
+  For instance, let <math|f<around*|(|n|)>> be the function of Example 1.1.3.
+  It can be shown that
+
+  <\equation*>
+    f<around*|(|n|)>\<sim\>e<rsup|-2>36<rsup|-n><around*|(|3n|)>!
+  </equation*>
+
+  For many purposes this estimate is superior to the \Pexplicit\Q
+  formulat(1.2).
+
+  5. The most useful but most difficult to understand method for evaluating
+  <math|f<around*|(|i|)>> is to give its <with|font-shape|italic|generating
+  function>. We will not develop in this chapter a rigorous abstract theory
+  of generating functions, but will instead content ourselves with an
+  informal discussion and some example. Informally, a generating fucntion is
+  an \Pobject\Q that represents a counting function <math|f<around*|(|i|)>>.
+  Usually this object is a <with|font-shape|italic|formal power series>. The
+  two most common types of <with|font-shape|italic|generating functions> are
+  <with|font-shape|italic|oridinary> generating functions and
+  <with|font-shape|italic|exponential> generating functions. If
+  <math|I=\<bbb-N\>>, then the ordinary generating funcion of
+  <math|f<around*|(|n|)>> is the formal power series
+
+  <\equation*>
+    <big|sum><rsub|n\<geqslant\>0>f<around*|(|n|)>x<rsup|n>,
+  </equation*>
+
+  while the exponential generating function of <math|f<around*|(|n|)>> is the
+  formal power series
+
+  <\equation*>
+    <big|sum><rsub|n\<geqslant\>0>f<around*|(|n|)><frac|x<rsup|n>|n!>.
+  </equation*>
+
+  (If <math|I=\<bbb-P\>>, the positive integers, then these sums begin at
+  <math|n=1>.) These power series are called \Pformal\Q because we are not
+  concerned with letting <math|x> take on particular values, and we ignore
+  questions of convergence and divergence. The term <math|x<rsup|n>> or
+  <math|x<rsup|n>/n!> merely marks the place where <math|f<around*|(|n|)>> is
+  written.
+
+  If <math|F<around*|(|x|)>=<big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>>,
+  then we call <math|a<rsub|n>> the coefficient of <math|x<rsup|n>> in
+  <math|F<around*|(|x|)>> and write
+
+  <\equation*>
+    a<rsub|n>=<around*|[|x<rsup|n>|]>F<around*|(|x|)>.
+  </equation*>
+
+  Similarly, if <math|F<around*|(|x|)>=<big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>/n!>,
+  then we write
+
+  <\equation*>
+    a<rsub|n>=n!<around*|[|x<rsup|n>|]>F<around*|(|x|)>.
+  </equation*>
+
+  In the same way we can deal with generaing functions of several variables,
+  such as
+
+  <\equation*>
+    <big|sum><rsub|l\<geqslant\>0><big|sum><rsub|m\<geqslant\>0><big|sum><rsub|n\<geqslant\>0>f<around*|(|l,m,n|)><frac|x<rsup|l>y<rsup|m>z<rsup|n>|n!>
+  </equation*>
+
+  (which may be considered as \Poridinary\Q in the indices <math|l,m> and
+  \Pexponential\Q in <math|n>), or even of infinitely many variables. In this
+  latter case every term should involve only finitely many of the variables.
+  A simple generating function infinitely many vaiables in
+  <math|x<rsub|1>+x<rsub|2>+x<rsub|3>+\<cdots\>>.
+
+  \;
+
+  \;
+
+  Useally we are give<space|1em>an infintec
+
   What is a good answer for a counting qusetion?
 
   Some are better than others, but different answers can have different
@@ -32,7 +207,7 @@
   tiling
 
   Let <math|a<rsub|n>=> # of tiling of a 2xn recrtangle by dominoes, what is
-  <math|a<rsub|n>> ?
+  <math|a<rsub|n>>\ 
 
   <\description>
     <item*|Answer1>Recurrence:
@@ -585,15 +760,32 @@
   <\equation*>
     <frac|1|<around*|(|1-x|)><rsup|n>>=<around*|(|1+<around*|(|-x|)>|)><rsup|-n>=<big|sum><rsub|k\<geqslant\>0><around*|(|<tabular|<tformat|<table|<row|<cell|-n>>|<row|<cell|k>>>>>|)><around*|(|-x|)><rsup|k>=<big|sum><rsub|K\<geqslant\>0><around*|(|<around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|k>>>>>|)>|)>x<rsup|k>
   </equation*>
+
+  <\equation*>
+    <frac|1|1-4x>=<around*|(|1+<around*|(|-4x|)>|)><rsup|-1>=<big|sum><rsub|k\<geqslant\>0><around*|(|<tabular|<tformat|<cwith|2|2|1|1|cell-halign|c>|<table|<row|<cell|-1>>|<row|<cell|k>>>>>|)><around*|(|-4x|)><rsup|k>=<big|sum><rsub|k\<geqslant\>0><around*|(|<tabular|<tformat|<cwith|1|1|1|1|cell-halign|c>|<cwith|2|2|1|1|cell-halign|c>|<table|<row|<cell|1+k-1>>|<row|<cell|k>>>>>|)>4<rsup|k>x<rsup|k>=<big|sum><rsub|k\<geqslant\>0>4<rsup|k>\<lambda\><rsup|k>
+  </equation*>
+
+  but also\ 
+
+  <\equation*>
+    <frac|1|<around*|(|1-4x|)>>=<big|sum><rsub|k\<geqslant\>0><around*|(|<tabular|<tformat|<cwith|1|1|1|1|cell-halign|c>|<cwith|2|2|1|1|cell-halign|c>|<table|<row|<cell|2+k-1>>|<row|<cell|k>>>>>|)>4<rsup|k>x<rsup|k>=<big|sum><around*|(|k+1|)>4<rsup|k>x<rsup|k>
+  </equation*>
+
+  \;
 </body>
 
-<initial|<\collection>
-</collection>>
+<\initial>
+  <\collection>
+    <associate|page-height|auto>
+    <associate|page-type|b5>
+    <associate|page-width|auto>
+  </collection>
+</initial>
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|1|?>>
-    <associate|auto-2|<tuple|1|?>>
+    <associate|auto-1|<tuple|1|4>>
+    <associate|auto-2|<tuple|1|10>>
   </collection>
 </references>
 
