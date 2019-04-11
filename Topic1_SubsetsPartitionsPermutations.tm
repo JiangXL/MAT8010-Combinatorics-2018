@@ -1,4 +1,4 @@
-<TeXmacs|1.99.8>
+<TeXmacs|1.99.7>
 
 <style|<tuple|generic|old-spacing>>
 
@@ -190,6 +190,61 @@
   latter case every term should involve only finitely many of the variables.
   A simple generating function infinitely many vaiables in
   <math|x<rsub|1>+x<rsub|2>+x<rsub|3>+\<cdots\>>.
+
+  Why bother with generating functions if they are merely another way of
+  writing a counting function? The answer is that we can perform varous
+  natural operations on generating functions that have a combinatorial
+  significance. For instance, we can add two generating functions. say in one
+  variable with <with|font-shape|italic|I=N>, by the rule.
+
+  <\equation*>
+    <around*|(|<big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>|)>+<around*|(|<big|sum><rsub|n\<geqslant\>0>b<rsub|n>x<rsup|n>|)>=<big|sum><rsub|n\<geqslant\>0><around*|(|a<rsub|n>+b<rsub|n>|)>x<rsup|n>
+  </equation*>
+
+  or
+
+  <\equation*>
+    <around*|(|<big|sum><rsub|n\<geqslant\>0>a<rsub|n><frac|x<rsup|n>|n!>|)>+<around*|(|<big|sum><rsub|n\<geqslant\>0>b<rsub|n><frac|x<rsup|n>|n!>|)>=<big|sum><rsub|n\<geqslant\>0><around*|(|a<rsub|n>+b<rsub|n>|)><frac|x<rsup|n>|n!>.
+  </equation*>
+
+  Similarly, we can multiply generating functions according to the rule
+
+  <\equation*>
+    <around*|(|<big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>|)><around*|(|<big|sum><rsub|n\<geqslant\>0>b<rsub|n>x<rsup|n>|)>=<big|sum><rsub|n\<geqslant\>0>c<rsub|n>x<rsup|n>,
+  </equation*>
+
+  where <math|c<rsub|n>=<big|sum><rsub|i=0><rsup|n>a<rsub|i>b<rsub|n-i>>, or
+
+  <\equation*>
+    <around*|(|<big|sum><rsub|n\<geqslant\>0>a<rsub|n><frac|x<rsup|n>|n!>|)><around*|(|<big|sum><rsub|n\<geqslant\>0>b<rsub|n><frac|x<rsup|n>|n!>|)>=<big|sum><rsub|n\<geqslant\>0>d<rsub|n><frac|x<rsup|n>|n!>,
+  </equation*>
+
+  where <math|d<rsub|n>=<big|sum><rsub|i=0><rsup|n><around*|(|<rsub|i><rsup|n>|)>a<rsub|i>b<rsub|n-i>>,
+  with <math|<around*|(|<rsup|n><rsub|i>|)>=n!/i!<around*|(|n-i|)>!>. Note
+  that these opreations are just what we would obtain by treating generating
+  functions as if they obeyed the ordinary laws of algebra, such as
+  <math|x<rsup|i>x<rsup|j>=x<rsup|i+j>>. These opreations coincide with the
+  addition and multiplication of function when the power series converge for
+  appropriate values of <math|x>, and they obey such familiar laws of algebra
+  as associativity and commutativity of addtion and multiplication,
+  distributivity of multiplication over addition, and cancellation of
+  multiplication(i.e., if <math|F<around*|(|x|)>G<around*|(|x|)>=F<around*|(|x|)>H<around*|(|x|)>>
+  and <math|F<around*|(|x|)>\<neq\>0>, then
+  <math|G<around*|(|x|)>=H<around*|(|x|)>>. In fact, the set of all formal
+  power series <math|<big|sum><rsub|n\<geqslant\>0>a<rsub|n>x<rsup|n>> with
+  complex coefficients <math|a<rsub|n>> (or more generally, coefficients in
+  any integral domain <math|R>, where)
+
+  \;
+
+  \;
+
+  \;
+
+  In mathematics, a <with|font-series|bold|group> is a set equipped witha
+  binary operation which combines any two elements to form a third element in
+  such a way that four condition called group axioms are statisfied, namely
+  closure, assoaciatibvity, identity and invertibility.
 
   \;
 
@@ -583,6 +638,8 @@
   Bijective proof: <math|P<rsub|od d><around*|(|n|)>=q<around*|(|n|)>>
   Standly 64
 
+  \;
+
   Given <math|\<lambda\>> partition with odd parts <math|2j-1> of
   mulitiplicity <math|r<rsub|j>=2<rsup|i<rsub|1>>+2<rsup|i<rsub|2>>+\<ldots\>>
   in its binary expansion. and create e.g.
@@ -772,27 +829,50 @@
   </equation*>
 
   \;
+
+  <\lemma>
+    <with|font-series|bold|Burnside's lemma>, sometimes also called
+    <with|font-series|bold|Brunside's counting theorem>, the
+    <with|font-series|bold|Cauchy-Frobenius lemma>, orbit-counting theorem,
+    or The Lemma that is not Burnsides's, is a result in group theory which
+    is often useful in taking account of symmetry when counting mathematical
+    objects. Its va
+  </lemma>
+
+  When <math|G> permutes <with|font-shape|italic|X>, it also permutes
+  <math|k-colorings> of <math|X>. Note that
+
+  <math|\<sigma\>\<in\>G> fixes a <math|k->
+
+  \;
+
+  Hence pattern inventory <math|\<assign\><big|sum><rsub|G-oribits
+  \<theta\>>1\<cdot\>a<rsup|colors in<space|1em>\<theta\>>=<big|sum><rsub|c=<around*|(|c<rsub|1>,c<rsub|2>,\<ldots\>,c<rsub|R>|)>>a<rsup|\<subseteq\>>#<around*|{|G-oribits<space|1em>\<theta\>
+  using\<subseteq\>|}>>\ 
+
+  Then <math|P<rsub|R><around*|(|q|)>\<assign\><big|sum><rsub|n\<geqslant\>0>P<rsub|R><around*|(|n|)>q<rsup|n>=<big|sum><rsub|\<lambda\>:\<lambda\>\<leqslant\>k>q<rsup|<around*|\||\<lambda\>|\|>>=<big|sum><rsub|\<lambda\>:l<around*|(|\<lambda\>|)>\<leqslant\>k>q<rsup|<around*|\||\<lambda\>|\|>>=>
 </body>
 
 <\initial>
   <\collection>
     <associate|page-height|auto>
-    <associate|page-type|b5>
+    <associate|page-medium|papyrus>
+    <associate|page-type|a4>
     <associate|page-width|auto>
   </collection>
 </initial>
 
 <\references>
   <\collection>
-    <associate|auto-1|<tuple|1|4>>
-    <associate|auto-2|<tuple|1|10>>
+    <associate|auto-1|<tuple|1|3>>
+    <associate|auto-2|<tuple|1|8>>
   </collection>
 </references>
 
 <\auxiliary>
   <\collection>
     <\associate|table>
-      <tuple|normal|<surround|<hidden-binding|<tuple>|1>||>|<pageref|auto-1>>
+      <tuple|normal|<surround|<hidden|<tuple>>||>|<pageref|auto-1>>
     </associate>
     <\associate|toc>
       <with|par-left|<quote|1tab>|1<space|2spc>Poset

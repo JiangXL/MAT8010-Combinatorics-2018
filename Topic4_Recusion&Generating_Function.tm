@@ -1,6 +1,6 @@
-<TeXmacs|1.99.5>
+<TeXmacs|1.99.7>
 
-<style|<tuple|generic|british>>
+<style|<tuple|generic|british|old-spacing>>
 
 <\body>
   <doc-data|<doc-title|Topic 4 Recusion and Generating
@@ -10,21 +10,21 @@
   </author-affiliation>>>>
 
   Given a sequence <math|<around*|{|a <rsub|n>|}><rsub|n=0><rsup|\<infty\>>>
-  of complex number, we define\ 
+  of \ \ number, we define\ 
 
   <\equation*>
     f<around*|(|x|)>:=<big|sum><rsup|\<infty\>><rsub|n=0>a<rsub|n>x<rsup|n>,
   </equation*>
 
-  the ordering generating function of <math|<around*|{|a<rsub|n>|}><rsub|n=0><rsup|\<infty\>>>,
+  the <with|font-shape|italic|ordering generating function >of
+  <math|<around*|{|a<rsub|n>|}><rsub|n=0><rsup|\<infty\>>>,
 
   <\equation*>
     g<around*|(|x|)>:=<big|sum><rsub|n=0><rsup|\<infty\>>a<rsub|n><frac|x<rsup|n>|n!>,
   </equation*>
 
-  \ the exponential generating function. We can using the
-
-  \;
+  \ the <with|font-shape|italic|exponential generating function>. We can
+  using the
 
   <\itemize>
     <item>Generating function can be used to prove and/or discovery
@@ -32,8 +32,124 @@
 
     <item>Generating function can be used to solve recursion
 
-    <item>Generating function can be used to prove recursion\ 
+    <item>Generating function can be used to prove recuentities.
+
+    <item>Generating function can be used to solve recursion
   </itemize>
+
+  <\example>
+    As an introduction, consider once again Example 10.1. Let <math|\<pi\>>
+    be a derangement of <math|<around*|{|1,2,\<ldots\>,n+1|}>>. Thereare
+    <math|n> choices ofr <math|\<pi\><around*|(|n+1|)>=i> an
+    <math|\<pi\><around*|(|i|)>=n+1>, then <math|\<pi\>> is also a
+    derangement on the set <math|<around*|{|1,2,\<ldots\>,n|}>\\<around*|{|i|}>>.
+    If <math|\<pi\><around*|(|n+1|)>=i> and
+    <math|\<pi\><around*|(|i|)>\<neq\>n+1=\<pi\><around*|(|j|)>>, then
+    replacing <math|\<pi\><around*|(|j|)>> by <math|i> yields a derangement
+    on the set <math|<around*|{|1,2,\<ldots\>,n|}>>. Therefore
+
+    <\equation*>
+      <around*|(|14.1|)> d<rsub|n+1>=n<around*|(|d<rsub|n>+d<rsub|n-1>|)>
+    </equation*>
+
+    which is also an immediate consequence of (10.3). Let
+    <math|D<around*|(|x|)>> be the <with|font-shape|italic|exponential
+    generating fucntion> for the sequence
+    <math|d<rsub|0>=1,d<rsub|1>=0,d<rsub|2>\<ldots\>> From(14.1) we
+    immediately find
+
+    <\equation*>
+      <around*|(|1-x|)>D<rprime|'><around*|(|x|)>=x D<around*|(|x|)>,
+    </equation*>
+
+    and from this we find <math|D<around*|(|x|)>=e<rsup|-x>/<around*|(|1-x|)>>
+    and (10.2).
+  </example>
+
+  In many casess, we use the generating functions only as a bookkeeping
+  device, and our operations of addition, multiplication(and even
+  substitution and derivation, as we shall see below)are to be interpreted
+  formally. It it possible to give a completely rigorous theory of formal
+  power series and we give an introduction to this theroy in Appendix 2. In
+  most cases, it is intuitively clear and easyt to check that the opreations
+  are legitimate. If the series that we use actually converge, then we can
+  use all appropriate knowledge from analysis concerning there series, as we
+  did in Example 14.1. We give another elementary example.
+
+  <\example>
+    Suppose that we have <math|k> boxes numbered <math|1> to <math|k> and
+    suppose <math|box> <math|i> contains <math|r<rsub|i>>
+    balls,<math|1\<leqslant\>i\<leqslant\>k>. A formal bookkepping device to
+    list all possible configurations is to let the named one correspond to
+    the term <math|x<rsub|1><rsup|r<rsub|1>>x<rsub|2><rsup|r<rsub|2>>\<ldots\>x<rsub|k><rsup|r<rsub|k>>>
+    in the product\ 
+
+    <\equation*>
+      <around*|(|1+x<rsub|1>+x<rsub|1><rsup|2>+\<cdots\>|)><around*|(|1+x<rsub|2>+x<rsub|2><rsup|2>+\<cdots\>|)>\<ldots\><around*|(|1+x<rsub|k>+x<rsub|k><rsup|2>+\<cdots\>|)>.
+    </equation*>
+
+    we call collect all the terms involving exactly <math|n> balls by taking
+    <math|x<rsub|i>=x> for all <math|i>, and considering the terms equal to
+    <math|x<rsup|n>>. Therefore we find that the number of ways to divide
+    <math|n> balls over <math|k> distinguishable boxes is the coefficient of
+    <math|x<rsup|n>> in the expansion of <math|<around*|(|1-x|)><rsup|-k>>,
+    and by (10.6) this is <math|<around*|(|<rsub|n><rsup|k-1+n>|)>>, giving a
+    second proof of Theorem 13.1.
+
+    In many cases, the combinational problem that we are interested in
+    leadsto a linear recursion relation with constant coefficients, which is
+    easily solved by standard methods.
+  </example>
+
+  <\example>
+    We consider paths of length <math|n> in the <math|X-Y> plane starting
+    from (0,0) with step <math|R:<around*|(|x,y|)>\<longrightarrow\><around*|(|x+1,y|)>,L:<around*|(|x,y|)>\<longrightarrow\><around*|(|x-1,y|)>>
+    and <math|U:<around*|(|x,y|)>\<rightarrow\><around*|(|x,y+1|)>>(i.e. to
+    the right, to the left, or up). We require that a step <math|R> is not
+    followedby a step <math|L> and vice versa. Let <math|a<rsub|n>> denote
+    the number of such paths. First observe that if we denoted by
+    <math|b<rsub|n>=a<rsub|n-1>> and furthermore trivially
+    <math|b<rsub|n+m>\<geqslant\>b<rsub|n>b<rsub|m>> and
+    <math|b<rsub|n>\<leqslant\>3<rsup|n-1>>. So by Fekete's lemma, Lemma
+    11.6, <math|lim<rsub|n\<longrightarrow\>\<infty\>>b<rsub|n><rsup|1/n>>
+    exists and is at most 3. Next, note that <math|a<rsub|0>=1> and
+    <math|a<rsub|1>=3>. We splite the set of paths of length <math|n> into
+    subsets depending on the last one or two steps. Clearly there are
+    <math|a<rsub|n-1>> paths ending with the setp <math|U>. Take a path of
+    length<math|n-1> and repeat the last step if it is <math|L> or <math|R>,
+    and adjoin a step <math|L> if the last step was <math|U>. In this way, we
+    obtain all the paths of length <math|n> that end in <math|L L>, <math|R
+    R>, or <math|U L>. So there are <math|a<rsub|n-1>> of these. It remains
+    to count the paths ending witjh <math|U R> and again it is trivial that
+    there are <math|a<rsub|n-2>> of these. We have shown that
+
+    <\equation*>
+      a<rsub|n>=2a<rsub|n-1>+a<rsub|n-2> <around*|(|n\<geqslant\>2|)>.
+    </equation*>
+
+    Let <math|f<around*|(|x|)>=<big|sum><rsub|n=0><rsup|\<infty\>>a<rsub|n>x<rsup|n>>.Then
+    the recursjion implies that\ 
+
+    <\equation*>
+      f<around*|(|x|)>=1+3x+2x<around*|(|f<around*|(|x|)>-1|)>+x<rsup|2>f<around*|(|x|)>,
+    </equation*>
+
+    i.e.
+
+    <\equation*>
+      f<around*|(|x|)>=<frac|1+x|1-2x-x<rsup|2>>=<frac|<frac|1|2>\<alpha\>|1-\<alpha\>x>+<frac|<frac|1|2>\<beta\>|1-\<beta\>x>,
+    </equation*>
+
+    where <math|\<alpha\>=1+<sqrt|2>,\<beta\>=1-<sqrt|2>>. Therefore
+
+    <\equation*>
+      a<rsub|n>=<frac|1|2><around*|(|\<alpha\><rsup|n+1>+\<beta\><rsup|n+1>|)>
+    </equation*>
+
+    and we find <math|lim<rsub|n\<rightarrow\>\<infty\>>a<rsub|n><rsup|1/n>=1+<sqrt|2>>.
+  </example>
+
+  \;
 
   \;
 
@@ -64,9 +180,11 @@
   is th size of fied
 
   <math|d\<geqslant\>1>, <math|N<rsub|d>>= the # of irreducible mnic polys of
-  dogree in<space|1em> z/pz[x].
+  dogree in z/pz[x].
 
-  <math|x<rsup|d>+a<rsub|n-1>x<rsup|d-1>+\<cdots\>+a<rsub|1>x+a<rsub|0>> 1UFD
+  <math|x<rsup|d>+a<rsub|n-1>x<rsup|d-1>+\<cdots\>+a<rsub|1>x+a<rsub|0>>\ 
+
+  UFD
 
   <\math>
     N<rsub|2>\ 
@@ -258,20 +376,16 @@
 
   Useful techniques
 
-  <\itemize>
-    <item><math|<around*|(|<tabular|<tformat|<table|<row|<cell|x>>|<row|<cell|m>>>>>|)>=<around*|{|<tabular|<tformat|<table|<row|<cell|0>|<cell|if
-    m\<less\>0>>|<row|<cell|0>|<cell|if x\<less\>m>>>>>|\<nobracket\>>>
+  <\math>
+    <around*|(|<tabular|<tformat|<table|<row|<cell|x>>|<row|<cell|m>>>>>|)>=<around*|{|<tabular|<tformat|<table|<row|<cell|0>|<cell|if
+    m\<less\>0>>|<row|<cell|0>|<cell|if x\<less\>m>>>>>|\<nobracket\>>
 
-    <item><math|x<rsup|-r><around*|(|1+x|)><rsup|n>=<big|sum><rsub|k><around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|r+k>>>>>|)>x<rsup|k>,\<forall\>n\<geqslant\>1>
+    x<rsup|-r><around*|(|1+x|)><rsup|n>=<big|sum><rsub|k><around*|(|<tabular|<tformat|<table|<row|<cell|n>>|<row|<cell|r+k>>>>>|)>x<rsup|k>,\<forall\>n\<geqslant\>1
 
-    <item><math|<frac|x<rsup|k>|<around*|(|1-x|)><rsup|k+1>>=<big|sum><rsub|r=0><rsup|\<infty\>><around*|(|<tabular|<tformat|<table|<row|<cell|r>>|<row|<cell|k>>>>>|)>x<rsup|r>>
+    <frac|x<rsup|k>|<around*|(|1-x|)><rsup|k+1>>=<big|sum><rsub|r=0><rsup|\<infty\>><around*|(|<tabular|<tformat|<table|<row|<cell|r>>|<row|<cell|k>>>>>|)>x<rsup|r>
 
-    <item><math|<big|sum><rsub|n\<geqslant\>0><frac|1|n+1><around*|(|<tabular|<tformat|<table|<row|<cell|2n>>|<row|<cell|n>>>>>|)>x<rsup|n>=<frac|1|2x><around*|(|1-<sqrt|1-4x>|)>>
-
-    <item><math|<big|sum><rsub|n=0><rsup|\<infty\>><around*|(|<tabular*|<tformat|<table|<row|<cell|2n>>|<row|<cell|n>>>>>|)>x<rsup|n>=<sqrt|1-4x>>
-  </itemize>
-
-  \;
+    <big|sum><rsub|n\<geqslant\>0><frac|1|n+1><around*|(|<tabular|<tformat|<table|<row|<cell|2n>>|<row|<cell|n>>>>>|)>x<rsup|n>=<frac|1|2x><around*|(|1-<sqrt|1-4x>|)>
+  </math>
 
   <\with|font-series|bold>
     Ex 1
@@ -315,7 +429,6 @@
 
 <\initial>
   <\collection>
-    <associate|font-base-size|11>
     <associate|page-medium|papyrus>
   </collection>
 </initial>

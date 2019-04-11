@@ -1,6 +1,6 @@
-<TeXmacs|1.99.5>
+<TeXmacs|1.99.7>
 
-<style|<tuple|generic|number-long-article>>
+<style|<tuple|generic|number-long-article|old-spacing>>
 
 <\body>
   <\hide-preamble>
@@ -31,6 +31,12 @@
     has all <math|<around*|(|<rsup|n><rsub|2>|)>> possible edges.
   </definition>
 
+  A permutation <math|\<sigma\>> of the vertex set of a graph <math|G> with
+  the property that <math|<around*|{|a,b|}>> is an edge if and only if
+  <math|<around*|{|\<sigma\><around*|(|a|)>,\<sigma\><around*|(|b|)>|}>> is
+  an edge, is called an <with|font-shape|italic|><with|font-shape|italic|automorphism>
+  of <math|G>.
+
   <math|X> is incident
 
   Adjacent Matrix
@@ -46,7 +52,7 @@
   (i.e,\ 
 
   We say two graphs are <with|font-series|bold|isomorphic> if there is a
-  one-to-oien corespondence between the vertex sets such that if two vertices
+  one-to-one corespondence between the vertex sets such that if two vertices
   are joined by an edge in one graph, then the coreesponding vertices are
   joined by an edge in the other graph.
 
