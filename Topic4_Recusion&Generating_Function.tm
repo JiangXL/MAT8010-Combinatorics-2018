@@ -23,7 +23,7 @@
     g<around*|(|x|)>:=<big|sum><rsub|n=0><rsup|\<infty\>>a<rsub|n><frac|x<rsup|n>|n!>,
   </equation*>
 
-  \ the <with|font-shape|italic|exponential generating function>. We can
+  \ \ the <with|font-shape|italic|exponential generating function>. We can
   using the
 
   <\itemize>
@@ -40,7 +40,7 @@
   <\example>
     As an introduction, consider once again Example 10.1. Let <math|\<pi\>>
     be a derangement of <math|<around*|{|1,2,\<ldots\>,n+1|}>>. Thereare
-    <math|n> choices ofr <math|\<pi\><around*|(|n+1|)>=i> an
+    <math|n> choices for <math|\<pi\><around*|(|n+1|)>=i> an
     <math|\<pi\><around*|(|i|)>=n+1>, then <math|\<pi\>> is also a
     derangement on the set <math|<around*|{|1,2,\<ldots\>,n|}>\\<around*|{|i|}>>.
     If <math|\<pi\><around*|(|n+1|)>=i> and
@@ -149,7 +149,109 @@
     and we find <math|lim<rsub|n\<rightarrow\>\<infty\>>a<rsub|n><rsup|1/n>=1+<sqrt|2>>.
   </example>
 
-  \;
+  <\example>
+    Let <math|a<around*|(|r,n|)>>, where <math|0\<leqslant\>r\<leqslant\>n>,
+    denote the number of solutions of the problem of Example
+    13.1(<math|a<around*|(|0,0|)>=1>).We divide the set of possible sequences
+    into two subsets: those with <math|x<rsub|1>=1> and those with
+    <math|x<rsub|1>\<gtr\>1>. The first subset clearly contains
+    <math|a<around*|(|r-1,n-2|)>> elements, the second one
+    <math|a<around*|(|r,n-1|)>> elements.So
+
+    <\equation*>
+      a<around*|(|r,n|)>=a<around*|(|r,n-1|)>+a<around*|(|r-1,n-2|)><space|4em><around*|(|n\<gtr\>1|)>
+    </equation*>
+
+    Let <math|a<rsub|n>> denote the number of poyminoes with <math|n> squares
+    and define <math|f<around*|(|x|)>\<assign\><big|sum><rsub|n=1><rsup|\<infty\>>a<rsub|n>x<rsup|n>>.
+    To find <math|f>, we introduce <math|a<around*|(|m,n|)>> for the number
+    of polyminoes for which the bottom layer has <math|m> squares(and a total
+    of <math|n>). We define <math|a<around*|(|m,n|)>\<assign\>0> if
+    <math|m\<gtr\>n>. Clearly
+
+    <\equation*>
+      a<around*|(|m,n|)>=<big|sum><rsub|l=1><rsup|\<infty\>><around*|(|m+l-1|)>a<around*|(|l,n-m|)>.
+    </equation*>
+
+    We define
+
+    <\equation*>
+      F<around*|(|x,y|)>\<assign\><big|sum><rsub|n=1><rsup|\<infty\>><big|sum><rsub|m=1><rsup|\<infty\>>a<around*|(|m,n|)>x<rsup|n>y<rsup|m>.
+    </equation*>
+
+    Then <math|f<around*|(|x|)>=F<around*|(|x,1|)>>. Because the series will
+    turn up below, we also define
+
+    <\equation*>
+      g<around*|(|x|)>\<assign\><big|sum><rsub|n=1><rsup|\<infty\>><big|sum><rsub|m=1><rsup|\<infty\>>m
+      a<around*|(|m,n|)>x<rsup|n>.
+    </equation*>
+
+    We would like to write
+
+    <\equation*>
+      g<around*|(|x|)>=<around*|(|<frac|\<partial\>F|\<partial\>y>|)><rsub|y=1>
+    </equation*>
+
+    Even though we have a theory of formal powre series, it may be
+    instructive to show that the righthand side of (14.4) convergesin a
+    sufficiently large region. This gives us the opportunity to show ta quick
+    way of getting a rough estimate for <math|a<rsub|n>>. Number the square
+    associate a quadruple <math|<around*|(|x<rsub|0>,x<rsub|1>,x<rsub|2>,x<rsub|3>|)>>
+    of 0's and 1's, where <math|x<rsub|0>=1> means that there is square of
+    the polyomino below this square, <math|x<rsub|1>=1>means that there is a
+    square of the polyomino to the left, <math|x<rsub|2>=1> means that there
+    is a square to the right. For example, in Fig 14.1 the first quadruple is
+    (0,0,1,1). The sequence of quadruples uniquely determines the
+    polyomino(e.g. the fifth qudruple is the first one in the sequence that
+    ends in a -, showing that <math|m=5>, etc.).This shows that
+    <math|a<rsub|n>\<leqslant\>15<rsup|n>>. From this and (14.3) we find
+    <math|a<around*|(|m,n|)>\<leqslant\>n\<cdot\>15<rsup|n-m>> which is
+    enough to justify (14.5). From (14.4) we find by substituting(14.3) and a
+    straightforward calculation
+
+    <\equation*>
+      F<around*|(|x,y|)>=<frac|x y|1-x y>+<frac|<around*|(|x
+      y|)><rsup|2>|<around*|(|1-x y|)><rsup|2>>f<around*|(|x|)>+<frac|x y|1-x
+      y>g<around*|(|x|)>
+    </equation*>
+
+    Differentiation of both sides of (14.6) with the respect to <math|y> and
+    taking <math|y=1> yields (using(14.5)):
+
+    <\equation*>
+      g<around*|(|x|)>=<frac|x|<around*|(|1-x|)><rsup|2>>+<frac|2x<rsup|2>|<around*|(|1-x|)><rsup|3>>f<around*|(|x|)>+<frac|x|<around*|(|1-x|)><rsup|2>>g<around*|(|x|)>.
+    </equation*>
+
+    From (14.7) we can find <math|g<around*|(|x|)>> and substitute this in
+    (14.6); then take <math|y=1>,which yields
+
+    <\equation*>
+      f<around*|(|x|)>=<frac|x<around*|(|1-x|)><rsup|3>|1-5x+7x<rsup|2>-4x<rsup|3>>
+    </equation*>
+
+    From (14.8) we see that <math|a<rsub|n>> satisfis the recurrence relation
+
+    <\equation*>
+      a<rsub|n>=5a<rsub|n-1>-7a<rsub|n-2>+4a<rsub|n>-3<around*|(|n\<geqslant\>5|)>.
+    </equation*>
+
+    As we remarked obove, it is not at all clear how one could probe this
+    directly; it has been done however.
+
+    <\remark>
+      From (14.9) we find that <math|lim<rsub|n\<longrightarrow\>\<infty\>>a<rsub|n><rsup|1/n>=\<theta\>>,
+      where <math|\<theta\>> is the zeros with largest absolute value of the
+      polynomial <math|x<rsup|3>-5x<rsup|2>+7x-4>(<math|\<theta\>> is about
+      3.2)
+    </remark>
+
+    The following example produces a result that it impoirtant for theory of
+    finite fields. In this example, we combine a generalization of the idea
+    of Example 14.2 with the method of formal operations with power series.
+    The reader shoud convince herself that the operations with logarithms are
+    correct wihout using convergence.\ 
+  </example>
 
   \;
 
